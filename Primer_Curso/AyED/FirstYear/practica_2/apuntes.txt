@@ -1,0 +1,29 @@
+double scal_prod(const vector_t& v) const; --1>vector_t::(diapositiva de clase) vector_t a,b
+                                           --2>sparse_vector_t::(ayer[anterior al L9])
+(se puede hacer en 4 lineas de codigo)
+
+p=a.scal_prod(b);
+
+sparse_vector_t sv;
+
+sv.scal_prod(a);
+
+Punto final FASE II: ("ostream& write_dense(ostream& os) const")
+
+
+vector2.txt
+lo que debe hacer es tienes un escaso, pues mostrar el vector original, es decir, con los valores nulos.
+
+
+
+FASE III: ("double scal_prod(const sparse_vector_t& v) const;")
+
+debe tener 3 argc
+
+
+
+
+
+
+
+NOTA: el main ya esta preparado para recibir dos vectores como en la practica1 con datos.txt

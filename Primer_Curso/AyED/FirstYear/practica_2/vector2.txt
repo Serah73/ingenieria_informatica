@@ -1,0 +1,7 @@
+   6
+   3     //cuanta memria necesitas, llamando a redimensiona, bla bla.
+   1   4.54                                   //este de aqui hasta...
+   3   2.5
+   5  31.2     //pair-->pareja objeto//       //aqui es el vector_pair_t vector de parejas
+
+todo esto forma el "sparse_vector::read(istream& is)" que es lo que tenemos que hacer.

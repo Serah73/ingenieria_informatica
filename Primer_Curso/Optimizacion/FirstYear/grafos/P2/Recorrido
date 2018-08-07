@@ -1,0 +1,89 @@
+{inicialización}
+Para todo nodo v, visitado[v] = falso;
+{preparamos el inicio del recorrido desde el nodo i}                EMPEZAMOS EL RECORRIDO POR EL NODO 1; EN "ToDo" voy a poner el 1 (*estrella)
+Visitado[i] = verdadero; ToDo ={i};
+{bucle principal}
+Mientras ToDo no vacío hacer
+Sea k en ToDo
+ToDo = ToDo – {k}
+Para todo adyacente j de k hacer
+Si visitado[j] = falso entonces
+Visitado[j]=verdadero;
+ToDo = ToDo + {j}
+
+
+
+
+        1-        NO PASAR MUCHAS VECES PASAR POR EL MISMO SITIO DEL GRAFO
+        2-        PASAR POR TODO EL MAPA
+     
+     
+        "(*estrella) MIENTRAS ToDo != 0  HACER
+        " K SACA DE ToDo
+        " PARA TODO J PERTENECIENTE A GAMMA SUB "K" HACER
+        "      SI NO VISITADO "j" ENTONCES
+        "            VISITADO[j]=TRUE
+        "             METER EN ToDo j
+        
+        //////ToDo ES COMO UNA BOLSA QUE CONTIENE EN DONDE ESTAMOS DEL ARBOL+Ç
+        ¿¿¿¿¿¿¿¿preguntar que es un DFS??????????
+        
+        
+        |-----------------------------|           1                        5
+        | dfs(1)                      |         |   \                  /        \
+        | gamma$1=[2]                 |         2    3                8          7
+        |  |  dfs(2)------------------|         |
+        |  |  gamma$2=[1,4,3]         |         4
+        |  |  |   dfs(4)--------------|         |
+        |  |  |   gamma$4=[2,6]       |         6
+        |  |  |   |    dfs(6)         |
+        |  |  |   |    gamma$6=[4]    |
+        |  |  |   |-------------------|
+        |  |  |   dfs(3) -------------|
+        |  |  |   gamma$3=[2]         |
+        |  |  |   |-------------------|
+        |  |--------------------------|       
+        |-----------------------------|
+        
+        inicializacion???
+        para todo nodo v
+                visitado[v]=false;
+        for(int i=0; i<¿¿??; i++)
+        {
+                visitado[i]=true;
+                ToDo=¿¿i??;
+        bucle!!
+                if(ToDo!=0)
+                {
+                        sea K en ToDo
+                        ToDo=ToDo - K;
+                        //para todo adyacente a j de k hacer-->
+                                if(!visitado[j])
+                                        visitado[j]=true;
+                                ToDo=ToDo + j;
+                }
+                
+                
+                /*
+void GRAFO::ComponentesConexas()
+{
+//        inicializacion???
+//      for(i=0; i<n;i++)
+        	visitado[i]=false;
+        
+        for(int i=0; i<n; i++)
+        {
+                visitado[i]=true;
+                ToDo=¿¿i??;
+        bucle!!
+                if(ToDo!=0)
+                {
+//                        sea K en ToDo
+                        ToDo=ToDo - K;
+//							para todo adyacente a j de k hacer-->
+                                if(!visitado[j])
+                                        visitado[j]=true;
+                                ToDo=ToDo + j;
+                }
+}
+*/
