@@ -1,0 +1,26 @@
+Desarrollar la plantilla tabla<Clave>, 
+● Buscar(Clave X): 
+retorna el valor booleano 'true' si el valor x del tipo clave esta guardado en la tabla hash. En otro caso retorna 'false'.
+
+● Insertar(Clave X):
+retorna el valor booleano true si se añade el valor X del tipo Clave a la celda. En otro caso retorna false.
+
+● estaLlena(): retorna el valor booleano true si los nClaves posiciones de la Celda están ocupadas. En otro caso retorna false
+
+
+
+Clase generica Celda<Clave>:
+-buscar(clave x)
+-insertar(clave x)
+-estaLLena()
+
+
+
+
+
+
+Función de dispersión (fDispersion):
+este atributo de la clase implementa la función de dispersión que utiliza la tabla hash.
+Recibe como parámetro un valor X del tipo Clave y retorna un valor en el intervalo [0..nCeldas-1] que indica 
+la posición de la celda dentro de vCelda que debería contener valor X del tipo Clave
+El constructor de la tabla hash recibe un parámetro que le indica la función de dispersión a instanciar.

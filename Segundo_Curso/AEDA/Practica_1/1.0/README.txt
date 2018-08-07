@@ -1,0 +1,1 @@
+A esta práctica le falta el main, además de algunos errores, está operativa en "Practica_1/2.0"
