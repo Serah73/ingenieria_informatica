@@ -1,0 +1,173 @@
+#!/bin/bash
+
+# sysinfo_page
+
+#### Constantes
+TITLE="Información del sistema para $HOSTNAME"
+RIGHT_NOW=$(date +"%x %r %Z")
+TIME_STAMP="Actualizada el $RIGHT_NOW por $USER"
+PROGNAME=$(basename $0)
+
+#### Funciones
+
+system_info()
+{
+	echo "<h2>Información de versión del sistema</h2>"
+	echo "<p>Función no implementada</p>"
+}
+
+
+show_uptime()
+{
+	echo "<h2>Tiempo de encendido del sistema</h2>"
+	echo "<pre>"
+	uptime
+	echo "</pre>"
+}
+
+
+drive_space()
+{
+	echo "<h2>Espacio en disco disponible</h2>"
+	echo "<pre>"
+	if [ "$1" != "" ]; then
+		df | head -n1
+		df | tail -n+2 | grep $1
+	else
+		df
+	fi
+	echo "</pre>"
+}
+
+
+home_space()
+{
+	directorios=
+	echo "<h2>Espacio ocupado por el directorio home</h2>"
+	echo "<pre>"
+	if [ $USER = root ]; then
+		directorios="$(ls /home)"
+	else
+		directorios="/home/$USER"
+	fi
+
+	printf "Directorios Archivos Usado Directorio\n"
+	for i in "$directorios"; do
+		printf "%11d " $(du $i | head -n-1 | wc -l)
+		printf "%8d " $(find $i -type f | tail -n+2 | wc -l)
+		du -s $i | sort -n -r
+	done
+	echo "</pre>"
+}
+
+
+open_files()
+{
+	echo "<h2>Número de archivos abiertos</h2>"
+	echo "<pre>"
+	echo "Usuario  Nº Archivos"
+	for i in "$(ls /home | uniq)"; do
+		printf "$i %d\n" $(lsof -u $i | wc -l) 
+	done
+	echo "</pre>"
+}
+
+
+sysinfo()
+{
+cat << _EOF_
+	<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>
+		$TITLE
+		</title>
+	</head>
+	
+	<body>
+		<h1>$TITLE</h1>
+		 <p>$TIME_STAMP</p>
+		$(system_info)
+		$(show_uptime)
+		$(drive_space $partfilter)
+		$(home_space)
+		$(open_files)
+	</body>
+	</html>
+_EOF_
+}
+
+
+usage()
+{
+	echo "usage: sysinfo_page [[[-f file] [-i] ] | [-h]]"
+}
+
+
+exit_error()
+{
+	echo "${PROGNAME}: ${1:-"Error desconocido"}" 1>&2
+	exit 1
+}
+
+
+#### Programa principal
+interactive=0
+sobreescribir=
+filename="sysinfo_page.html"
+partfilter=
+
+for i in df du uptime lsof; do
+	if ! test -x "$(which $i)"; then
+		exit_error "Falta un programa básico para el funcionamiento del script"
+	fi
+done
+
+while [ "$1" != "" ]; do
+	case $1 in
+		-f | --file )				shift
+									filename=$1
+									;;
+		-i | --interactive )		interactive=1
+									;;
+		-h | --help )				usage
+									exit
+									;;
+		-p | --partitions-filter )	shift
+									partfilter=$1
+									;;
+		* )							usage
+									exit_error "Opción inválida en línea de comandos"
+	esac
+	shift
+done
+
+if [ $interactive -eq 1 ]; then
+	echo "Introduzca el nombre del archivo de salida: "
+	read filename
+	if [ -f $filename ]; then
+		echo "Ya existe $filename. ¿Sobreescribir? (Si/No): "
+		read sobreescribir
+		case $sobreescribir in
+			"Si" )		sysinfo > $filename
+						exit
+						;;
+			"No" )		exit
+						;;
+			* )			echo "Opción no válida"
+						exit
+		esac
+	else
+		sysinfo > $filename
+	fi
+else
+	sysinfo > $filename
+fi
+
+
+
+
+
+
+
+#!/bin/bash

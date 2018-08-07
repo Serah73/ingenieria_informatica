@@ -1,0 +1,56 @@
+1-El "dup2(fd, STDIN_FILENO)" no entiendo que es el segundo parámetro que se le envía,
+creo que es el descriptor de archivo por defecto de la entrada estándar.
+
+    R:Exacto. STDIN_FILENO es una macro. Vale 0 pero es mejor usar la macro que poner:
+            "dup2(fd, 0)"
+
+2-Por otro lado, si el dup(), dup2(), dup3(), según el apartado se usan para la redirección de la E/S,
+en vez de "STDIN_FILENO"(si entendí bien el funcionamiento) ¿cuál sería para redirigir la salida?
+
+    R:La salida estándar es el descritor 1 o la macro STDOUT_FILENO. También está la salida de error STDERR_FILENO.
+ 
+3-Creo que sería mas apropiado usar el pipe() para redirigir el resultado a un ".txt" mismo o un programa que se nutra de los datos.
+Esto que dije del pipe() para redirigir la salida, sería con el dup2(). Lo que no entiendo en específico es para que se usaría cada
+uno exactamente, la situación o el ámbito.
+
+    R:La clave del asunto es dup2. Si quieres redirigir la salida estándar:
+
+            "dup2(fd, STDOUT_FILENO);"
+
+    Si quieres redirigir la entrada estándar:
+
+            "dup2(fd, STDIN_FILENO);"
+
+    En ambos casos ¿a donde se redirige? Pues a donde se que apunte fd. Si quieres redirigr a un archivo, lo abres con open:
+
+            "int fd = open("hola.tx", O_OPCIONES)"
+
+    Claro las opciones deben ser coherentes con la redireción. Si rediriges la STDIN_FILENO, debes abrir con O_RDONLY.
+    Si quieres redigir la STDOUT_FILENO, necesitas O_WRONLY.
+    Otra opción es que quieras usar la redirección para conectar dos procesos. Por ejemplo, que la salida estándar de un
+    proceso se conecta con la entrada estándar de otro. Vamos algo como:
+
+            "ls  | wc"
+
+    en bash.
+
+    Entonces no valen los archivos. Necesitas tuberías. Creas una tubería con pipe().
+
+            "int fds[2];"
+            "pipe(fds);"
+
+    Ahora fds tiene dos descriptores. fds[0] es la salida de la tubería. fds[1] es el descriptor de la entrada de la tubería. 
+    Como en un archivo, lo que escribas en fds[1] lo puedes leer de fds[0].
+
+    Bien pues esos descriptores los usas con dup2 para redigir la entrada o la salidad estándar a ellos. Igual que si hubieran
+    sido creados con open().
+    
+    
+4-Permitir que desde la línea de comandos del programa padre se especifique el nombre del archivo donde guardar el resultado.
+    
+    R: Pues leer el nombre del archivo usando argc y argv (¿sabes como va eso?).
+    Abrir un archivo con ese nombre y redirigir la salida del proceso hijo que quieras capturar a ese fichero usando dup2.
+    
+...
+
+    Ok http://decsai.ugr.es/~jfv/ed1/c/cdrom/cap6/cap64.htm     ------> enlace de uso de argc y argv.

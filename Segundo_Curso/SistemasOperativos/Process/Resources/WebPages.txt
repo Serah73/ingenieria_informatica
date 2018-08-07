@@ -1,0 +1,10 @@
+General Help: https://linux.die.net/man/
+
+
+Command "execlp": https://linux.die.net/man/3/execlp
+
+
+argc, argv: http://decsai.ugr.es/~jfv/ed1/c/cdrom/cap6/cap64.htm
+
+Funciones que admite el control de señales de interrupción:
+http://man7.org/linux/man-pages/man7/signal-safety.7.html

@@ -1,0 +1,63 @@
+1-¿Qué es la estructura de datos "pid_t"?
+    
+    R:Bueno, no es realmente un estructura es un entero. Solo que le han dado un nombre para que distinguirlo de otros enteros.
+
+
+2-las funciones: "execlp()", "wait()", ¿tienen alguna biblioteca en particular?
+    
+    R:Claro. Si ejecutas man 2 fork, man 2 exec o man 2 wait verás el la cabecera que hay que añadir y debajo el prototipo de la función
+ 
+
+3-¿Cómo podrías usar en C++ las variables de entorno para ejecutar un comando como por ejemplo:
+    comando->   "execlp("/bin/ps", "ps", "-u", NULL)"
+para ver la lista de archivos abiertos del usuario actual?
+    
+    R:Primero llamas a getenv("USER") y obtienes el valor de la variable USER.
+        ejemplo comando->   char* user = getenv("USER");
+    despues:
+        ejemplo comando->   execlp("/bin/ps", "ps", "-u", user, NULL)"
+        
+4-¿El sighandler_t seria como el pid_t o tiene otro funcionamiento?
+
+    R:No tiene nada que ver. "pid_t" es el tipo que se usa para un identificador de proceso. Es lo que devuelve fork().
+    -¿Qué es realmente? Eso dependen del sistema operativo. Podría ser un int o un long.
+    Es como lo del open() que devuelve un int para indentificar un archivo abierto. Con fork() pasa igual. 
+    Se devuelve algo para identificar un archivo abierto, pero decidieron no decir que era un int siempre. 
+    Decidieron que lo que devuevle es pid_t y que cada sistema elija el tipo real que hay detrás.
+    En algun .h hay un: "typedef int pid_t" o un "typedef long pid_t" o incluso "typedef long long pid_t"
+    Y así cada sistema crear el "alias" que necesiten.
+        El caso de sighandler_t es parecido pero diferente. std::signal necesita el puntero a una función que llamará
+    el sistema operativo cuando llegue una señal. La esa función debe tener esta declaración:
+
+                            "void nombre_función(int);"
+
+    ¿Como se declara en C la función signal para que reciba un puntero a una función como argummento y que devuelva también
+    un puntero a una función? Pues así:
+
+                            "void(*)(int) signal(int signum, void(*handler)(int));"
+
+    Complicado, ¿verdad?. signal recibe un entero a través del argumento signum y un puntero a una función a través del
+    argumento handler. Quizás lo entenderías mejor si la sintaxis fuera esta:
+
+                            "void(*)(int) signal(int signum, void(int) *handler);"
+
+    Ahí quieda más claro que handler es un puntero a void(int) que es una función. Pero la sintaxis no es esa. Es:
+
+                            "void(*)(int) signal(int signum, void(*handler)(int));"
+
+    signal configurar que cuando llegue la señal signum debe llamar a handler y devuelve el puntero a la función que
+    se había configurado anteriormente en el retorno. Por eso devuelve "void(*)(int)"
+
+    Bien, esto es un rollo hasta para los mejores, así que se puede usar "typdef" como con "pid_t" para definir un alias 
+    para "void(*)(int)":
+
+                            "typedef void(*sighandler_t)(int)"
+
+    Y así, signal se define ahora como:
+
+                            "sighandler_t signal(int signum, sighandler_t hander)"
+
+    Es decir, como con pid_t sighander es un alias a otra cosa. Pero ho es lo mismo que pid_t. Este alias es a un puntero
+    a una función con la forma:
+
+                            "void nombre_función(int);"

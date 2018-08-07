@@ -1,0 +1,1 @@
+ps -A -ocmd --sort min_flt --no-headers
