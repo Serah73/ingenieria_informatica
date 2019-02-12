@@ -1,0 +1,48 @@
+FORMATO QUE SE PIDE ESTE AÑO
+-----------------------------------------------
+1.	Descripción del entorno, simulación e implementación.
+    1.1.	Descripción del problema
+    1.2.	Consideraciones de moralidad
+    1.3.	Descripción del sistema basado en agente 
+    1.4.	Descripción del informe de simulación.
+2.	Funciones heurísticas contempladas
+    2.1.	Función Euclídea
+    2.2.	Función Manhattan (Lineal)
+3.	Estructura de datos para la contención de nodos en el árbol de búsqueda.
+4.	Evaluación 
+    4.1.	Estudio experimental, tabla de resultados
+    4.2.	Conclusiones
+
+FORMATO OLD:
+--------------------------------------------------
+TITULO:
+
+0. Introducción
+0.1. Descripción del problema
+0.2. Coordinación 
+0.2.1. Distribución de las tareas
+0.2.2. Organización del grupo
+
+1. Memorias
+Semana 1: prototipo de la malla
+Semana 2: Nos enfocamos en la asignación de la distribución aleatoria y manual de los puntos y personas. Muestar base y provisional de la interfaz
+Semana 3: Empezamos a diseñar la heurística
+Semana 4: Corregimos errores y continuamos con el desarrollo de la heurística
+Semana 5: 
+
+2. Herramientas utilizadas (C9, gdrive, NQC)
+
+3. Funciones y Algoritmos de búsqueda
+3.1. Algoritmo A*
+3.2. Función del agente
+3.3. Función heurística
+
+4. Interfaz
+
+5. Estudio experimental
+5.1. Tabla comparativa
+
+6. Conclusiones
+
+7. Biografía
+

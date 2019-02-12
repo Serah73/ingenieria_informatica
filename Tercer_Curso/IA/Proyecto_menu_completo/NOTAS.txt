@@ -1,0 +1,14 @@
+https://escarbandocodigo.wordpress.com/2011/07/11/1051
+
+-------------------------------------------------------
+
+Determinar los movimientos en la malla.
+
+estrategia de búsqueda A*: conocimiento del camino recorrido + la distancia estimada del punto hasta el punto final
+
+h0(n): 
+h1(n): sqrt((first - p.first) * (first - p.first) + (second - p.second) * (second - p.second));
+h2(n): max{|x1-x2|-|y1-y2|}
+h3(n): max{f1(o), f2(o), f3(o)}
+
+------------------------------------------------------

@@ -1,0 +1,116 @@
+/*    for(int m=0; m<possible_move_.size(); m++)
+        std::cout << "(" << possible_move_[m][0] << "," << possible_move_[m][1] << std::endl;
+        std::cout << std::endl;
+*/     
+ 
+ 
+ // std::cout << "xdest: " << get_x_destiny() << std::endl;
+           // std::cout << "ydest: " << get_y_destiny() << std::endl;
+
+
+
+int car_t::Euclidiana(int x, int y, grid_t& rejilla)
+{
+    ant_t start(0,0); // declarar nodo inicial
+    ant_t goal(x, y); // declarar nodo final
+        
+    while((x >= rejilla.get_height()) || (y >= rejilla.get_width()))
+    {
+        std::cout << "\nEsa coordenada se encuentra fuera de los límites\n";
+        define_goal(ant_t goal); (?) Preguntar.
+    }
+    
+    // si la casilla inicial es igual a la final -> retornar el nodo, no hacer nada (pues ya se está en el objetivo)
+    if(es_igual(start, goal)) return 0;
+    else
+    {
+        encontrar_vecinos(start);
+            //  se incluye cada nodo en un contenedor (set, vector, list, etc)
+            // mientras el contenedor no esté vacío se compara:
+                // (la distancia de de un vecino hasta el nodo final) + (la distancia recorrida desde el nodo inicial hasta el actual)
+                // se descartan los obstáculo
+                
+                // INCOMPLETO
+    }
+}
+
+
+int car_t::Manhattan(int x, int y, grid_t& rejilla)
+{
+    
+}
+
+
+
+/////////////////////////// PRIVATE /////////////////////////////////////////
+
+
+void car_t::define_goal(ant_t goal)     //esto deberia ser un cambio a la rejilla o en tal caso guardar en otra variable
+{
+    cout << "\nintroduce las nuevas coordenadas de la meta:" << endl;
+    cin >> x >> y;
+    
+    goal.set(x, y); 
+}
+
+void car_t::encontrar_vecinos(ant_t P)
+{
+    int j;
+    
+    for(int i = 0; i < 4; i++) // 4 posibles vecinos (arriba, abajo, derecha, izquierda)
+    {
+        if(i%2 == 0) j = +1; 
+        else         j = -1;
+
+        if(i < 2)       opened_list_.insert(ant_t tempoint(P.get_x()+j, P.get_y())); // meto en la lista vecino arriba y abajo
+        else            opened_list_.insert(ant_t tempoint(P.get_x(), P.get_y()+j)); // meto en la lista vecino derecha e izquierda
+    }
+    
+    
+}
+
+float car_t::calcular_costo(ant_t P1, ant_t P2, int heuristica) // "1" para euclidiana, "2" para manhattan
+{
+    if(heuristica == 1) return sqrt(pow(P1.get_x() - P2.get_x(), 2) + pow(P1.get_x() - P2.get_x(), 2));
+    if(heuristica == 2) return abs(P1.get_x() - P2.get_x()) + abs(P1.get_y() - P2.get_y());
+    
+}
+
+bool car_t::es_igual(ant_t P1, ant_t P2)
+{
+    return ((P1.get_x() == P2.get_x()) && (P1.get_y() == P2.get_y())); 
+}
+
+
+
+
+// EN EL HEADER
+
+
+    private:                                                      // para encapsular métodos que se van a reutilizar
+        
+        //void define_goal(int x, int y);
+        // esta esta mal planteada ----> void define_goal(ant_t goal);
+        //todas las funciones que tienen ant_t hay que darle un pensamiento ---->   void encontrar_vecinos(ant_t P);
+        
+        // A* determina la suma de las dos distancias a la hora de evaluar nodos
+        float costo_indirecto(ant_t P1, ant_t P2, int heuristica); // distancia entre P1 y P2 segun la heurística ("1" para euclidiana, "2" para manhattan)
+        int costo_directo(int n); // distancia reccorrida (suma de las casillas recorridas)
+        
+        bool es_igual(ant_t P1, ant_t P2);
+        bool es_traspasable(ant_t P);
+        
+        
+        // determinar la posición del coche 
+    // si coche(0,0) hacer: guardar vecinos en un contenedor 
+        // recorrer hasta 2. almacenar down y right // almacenar en set, list, vector, etc
+
+    // si coche(0, y!=0) hacer: guardar vecinos en un contenedor 
+        // recorrer hasta 3. almacenar up, down y right // almacenar en set, list, vector, etc
+
+    // si coche(x!=0, 0) hacer: guardar vecinos en un contenedor 
+        // recorrer hasta 3: down, left y right. // almacenar en set, list, vector, etc
+
+    // si el coche esta en (x!=0, y!=0): guardar vecinos 
+        // recorrer hasta 4: up, down, left y right // almacenar en set, list, vector, etc
+    

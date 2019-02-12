@@ -1,0 +1,23 @@
+Tabla:
+                                    Euclidiana                          Rectilinea
+Tamaño      Obstaculos |     Solucion    Nº de nodos generados |  Solucion    Nº de nodos generados
+                       |                                       |
+20x20       10%        |       7           15                  |    7           20
+20x20       20%        |      10           25                  |   10           30
+            30%        |      15          100                  |   15          143
+20x20       40%        |      40          150                  |   40          201
+
+20x20
+-------------------------------------------------------------------------------------------------
+30x30       10%
+30x30       20%
+.           .
+.           .
+.           .
+100x100
+
+
+
+Las soluciones de las funciones euristicas en la tabla deben ser las mismas puesto que
+ambas son busquedas A*. En caso contrario una o las dos funciones estan mal.
+

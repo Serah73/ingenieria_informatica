@@ -1,0 +1,1 @@
+Esta es una carpeta para experimentos. Con la intención de elaborar contenido provisional antes de que sea aceptado y llevado al proyecto principal.
