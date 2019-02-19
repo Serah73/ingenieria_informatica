@@ -27,7 +27,7 @@ Introducción al protocolo HTTP.
     
 7- ¿Qué idioma acepta?
 
-    - "es-ES" y "en-US"
+    - "en-US"
     
 8- ¿Alguna línea de código JavaScript?
 
