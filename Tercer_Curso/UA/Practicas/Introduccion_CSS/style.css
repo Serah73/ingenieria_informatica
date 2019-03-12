@@ -1,0 +1,163 @@
+body {
+    font-family: Arial;
+    font-size: 1.5em;
+}
+
+#contenedor{
+    color: rgb(0, 0, 0);
+    width: 770px;
+    
+}
+
+
+nav #nav_header{
+    width: 770px;
+    background-color: rgb(248, 232, 8);
+    height:100px;
+
+}
+
+
+div #header1{
+    height:100px;
+    overflow: auto;
+}
+
+
+.ul_header {  
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(240, 233, 233);
+    height:100px;
+    background-image: url('cabecera.png');
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+    background-position: right top;
+    
+}
+
+
+li {
+    float: left; /* Alineación a la izquierda, menu horizontal*/
+    height:100px;
+
+}
+ /*
+li a {
+
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding-bottom: 0.7em;
+    padding-top: 0.3em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    text-decoration: none;
+    height:100px;
+
+  }*/
+.katri {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding-bottom: 0.7em;
+    padding-top: 0.3em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    text-decoration: none;
+    height:100px;
+}
+  
+.katri:hover {
+    background-color: rgb(51, 50, 50);
+}
+
+.active {
+    background-color: rgb(51, 126, 238);
+}
+
+.dummy:hover{
+	color: red;
+}
+
+.dummy:active{
+    font-family: Verdana;
+}
+
+.dummy {
+    color: blue;
+}
+
+div #contenido_secundario{
+    background-color: rgb(216, 144, 84);
+    width: 200px;
+    height: 300px;
+    float: left;
+    overflow: auto;
+    text-align: center;
+}
+
+div #contenido_principal{
+    background-color: rgb(228, 155, 155);
+    width: 330px;
+    height: 300px;
+    float:center;
+    overflow: auto;
+    text-align: center;
+}
+
+div #contenido_enlaces{
+    background-color: rgb(106, 190, 124);
+    width: 200px;
+    height: 300px;
+    float:right;
+    /*padding-left: 40px;*/
+    margin-right: 40px;
+    margin-top:-300px;
+
+
+    
+}
+
+div #footer{
+    background-color: rgba(147, 97, 189, 0.308);
+    width: 770px;
+    float: none;
+    overflow: auto;
+    
+}
+
+
+table, td {
+margin-top: 1em;
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+ td {
+  padding: 5px;
+  text-align: center;    
+}
+
+a {
+  color: green;
+}
+
+p {
+margin-top: 0.5em;
+}
+
+img {
+margin-top: 1em;
+}
+
+.ul_secundario {
+list-style-type: none;
+    
+   
+    height:50px;
+}
+
+
