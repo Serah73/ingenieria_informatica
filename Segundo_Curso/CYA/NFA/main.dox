@@ -1,0 +1,11 @@
+/*!
+ \mainpage Computabilidad y Algoritmia.
+
+@brief Resolucion de un NFA, encargado de leer a traves de un fichero para analizar
+los estados de muerte, estados importantes y si acepta o no una cadena que se pide
+al usuario.
+
+@author Jose Ramon Rodriguez Hernandez
+
+@param Entrega Practica 4 - NFA
+*/
