@@ -1,0 +1,13 @@
+{
+    "Compra":[
+        {
+            "Nombre": "Objeto1",
+            "Precio": "2.44"
+        },
+        {
+            "Nombre": "Objeto2",
+            "Precio": "3.94"
+        }
+        
+    ]
+}
