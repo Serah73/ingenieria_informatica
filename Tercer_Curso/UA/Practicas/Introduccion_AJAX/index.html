@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <!--Import Google Icon Font-->
+    <head>
+         <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
@@ -14,20 +14,28 @@
 
   <!--Menu sidenav-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <!--<script>
+            $(document).ready(function(){
+                $("#send").click(function(){
+                    $.getJSON("https://jsonplaceholder.typicode.com/comments?email="+$('#id').val(), function(result){
+                        $("#data").html("");
+                        $.each(result, function(i, field){
+                            $("#data").append(JSON.stringify(field) + "<br><br>");
+                        });
+                    });
+                });
 
-  <!--<script>
-    //       $(document).ready(function(){ 
-    //           $('.sidenav').sidenav(); 
-              
-    //       });
-    //   </script>
-    </head>-->
 
-  <!--Navbar con Left Aligned Links-->
+            });
 
-<body>
-  <div class="navbar-fixed">
+        </script>-->
+        
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <div class="navbar-fixed">
     <nav class="cyan darken-2">
 
       <div class="nav-wrapper">
@@ -42,70 +50,46 @@
           <li><a href="Biblioteca.html">Biblioteca</a></li>
           <li><a href="Autores.html">Autores</a></li>
           <li><a href="Foro.html">Foro</a></li>
-          <li><a href="registro.html">Registro</a></li>
         </ul>
       </div>
     </nav>
   </div>
+      <br> <br>
 
-  <!--<ul class="sidenav" id="mobile-nav">-->
-  <!--                    <li class="active"><a href="Inicio.html">Inicio</a></li>-->
-  <!--                    <li><a href="Biblioteca.html">Biblioteca</a></li>-->
-  <!--                    <li><a href="Autores.html">Autores</a></li>-->
-  <!--                    <li><a href="Foro.html">Foro</a></li>-->
-  <!--</ul>-->
-
-  <div class="container">
-
-
-    <div class="section">
-
-      <!--   Icon Section   -->
-      <div class="row">
-
-        <!--COLUMNA 1-->
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">import_contacts</i></h2>
-            <h5 class="center">Variedad </h5>
-
-            <p class="light">
-              Contamos con un gran número de libros y otros documentos disponibles
-              para su lectura. A través de las distintas reuniones de lectura que se realizan mensualmente podrá leer
-              junto a nosotros una gran cantidad de libros entre ellos destacamos novelas y poemarios.
-            </p>
-          </div>
+        <b>ID:</b><br>
+        <input type="text" id="id" name="id" value="1">
+        <div class="modal-footer">
+        <button id="send" type="submit" class="form-control btn btn-primary"  name="enviar" (click)="animacion()" onclick="hey()">Iniciar Sesión</button>
         </div>
 
+        <p id="data"></p>
+        
+        
+        
+         <div class="checkbox2">
+      <label>
+        <input type="checkbox"> Recordar sesión
+      </label>
+    </div>
+    <br>
 
-        <!--COLUMNA 2-->
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">create</i></h2>
-            <h5 class="center">Soporte para escritores</h5>
+    <div class="checkbox2">
+      <label>
+        <div class="help-block text-right"><a href="">Recordar contraseña</a></div>
+      </label>
 
-            <p class="light">
-              Ayudamos a visualizar y darse a conocer a escritores amateur. Conocerá a aquellos escritores con más auge
-              en estos momentos, además de información sobre sus distintas obras.
-            </p>
-          </div>
-        </div>
-
-        <!--COLUMNA 3-->
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">Foro</h5>
-
-            <p class="light">Podrá mantener una relación constante con los miembros de la página a través del foro,
-              obtener ayuda y recomendaciones de otros lectores.</p>
-          </div>
-        </div>
+      <div class="bottom text-center">
+        ¿No tienes cuenta? <a href="/registro"><b>Crea una cuenta</b></a>
       </div>
 
     </div>
-    <br><br>
+    <br>
+
+
+
+
   </div>
+
 
   <!--FOOTER-->
   <footer class="grey darken-4">
@@ -142,14 +126,5 @@
       </div>
     </div>
   </footer>
-
-
-
-
-  <!--JavaScript at end of body for optimized loading-->
-
-  <script type="text/javascript" src="js/materialize.min.js"></script>
-
-</body>
-
+    </body>
 </html>
