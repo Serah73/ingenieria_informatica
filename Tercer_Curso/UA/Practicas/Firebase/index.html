@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/bookteam.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyDLJUI3VYgL53qdHOXEzlNlPi1uR2K0TcY",
+            authDomain: "uya3ro.firebaseapp.com",
+            databaseURL: "https://uya3ro.firebaseio.com",
+            projectId: "uya3ro",
+            storageBucket: "uya3ro.appspot.com",
+            messagingSenderId: "905524222112"
+        };
+
+        firebase.initializeApp(config);
+    // Referencia a la base de datos
+    </script>
+
+
+    <!--Menu sidenav-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <div class="navbar-fixed">
+        <nav class="cyan darken-2">
+
+            <div class="nav-wrapper">
+                <a class="brand-logo right" href="#"><img class="col s1" id="bookicon" src="images/icon.png"
+                        alt="logo pagina" /><em>BookTeam</em></a>
+                <!--<a class="brand-logo left" href="#" data-target="mobile-nav">-->
+                <!--<i class="material-icons">menu</i>-->
+                <!--</a>-->
+
+                <ul class="left hide-on-med-and-down">
+                    <li class="active"><a href="Inicio.html">Inicio</a></li>
+                    <li><a href="Biblioteca.html">Biblioteca</a></li>
+                    <li><a href="Autores.html">Autores</a></li>
+                    <li><a href="Foro.html">Foro</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <br> <br>
+
+    <div id="container" #container>
+
+        <form>
+            <b>Nombre:</b><br>
+            <input type="text" id="nombre" name="Nombre" placeholder="Introduzca su nombre." #nombre required />
+            <p>En el anterior campo debes introducir tu nombre.</p>
+            <br>
+            <b>Apellidos:</b><br>
+            <input type="text" id="apellidos" name="Apellidos" placeholder="Introduzca sus apellidos." #apellidos
+                required />
+            <p>En el anterior campo debes introducir tus apellidos.</p>
+            <br>
+            <b>Nombre de usuario:</b><br>
+            <input type="text" id="usuario" name="Nombre de usuario" placeholder="Introduzca su nombre de usuario."
+                #usuario required />
+            <p>En el anterior campo debes introducir tu nombre de usuario.</p>
+            <br>
+            
+            <b>Fecha de nacimiento:</b><br>
+            <input type="date" id="fecha_nacimiento" name="Fecha de nacimiento"
+                placeholder="Introduzca su fecha de nacimiento." onfocusout="mayor_edad()" #fecha_nacimiento required />
+            <p>En el anterior campo debes introducir tu fecha de nacimiento, debes ser mayor de edad para crear una cuenta.</p>
+            <br>
+            
+            <b>País:</b><br>
+            <input type="text" id="pais" name="Pais" placeholder="Introduzca su país de procedencia." />
+            <p>En el anterior campo debes introducir el país de procedencia.</p>
+            <br>
+
+            <b>Teléfono:</b><br>
+            <input type="text" id="tlf" name="Teléfono" placeholder="Introduzca su teléfono de contacto." />
+            <p>En el anterior campo debes introducir tu número de teléfono.</p>
+            <br>
+            
+            <b>Correo:</b><br>
+            <input type="text" id="mail" name="Correo" placeholder="Introduzca su correo." #mail
+                onfocusout="respuesta_email(mail.value )" required />
+            <p>En el anterior campo debes introducir tu correo usando el siguiente formato: correo@correo.correo.</p>
+            <br>
+
+
+            <b>Contraseña:</b><br>
+            <input type="password" id="pswd" name="pswd" placeholder="Introduzca su contraseña." #pswd required />
+            <p>En el anterior campo debes introducir la contraseña. La contraseña debe cumplir los siguientes criterios:</p>
+            <ul>
+                <li>Contener una letra.</li>
+                <li>Contener una letra mayúscula.</li>
+                <li>Contener un número.</li>
+                <li>Tener un tamaño mínimo de 8 caracteres.</li>
+                
+            </ul>
+            <br>
+
+            <b>Contraseña:</b><br>
+            <input type="password" id="pswd2" name="pswd2" placeholder="Repita su contraseña."
+                onfocusout="validar_contraseña(pswd, pswd2)" #pswd2 required />
+            <p>En el anterior campo debes introducir nuevamente la contraseña anterior.</p>
+            
+        </form>
+
+        <br>
+        <div id="pswd_info" #pswd_info>
+            <p id=req>Requisitos de contraseña:</p>
+            <ul>
+                <li id="letra" class="invalid" #letra>Al menos <strong>una letra</strong></li>
+                <li id="mayuscula" class="invalid" #mayuscula>Al menos <strong>una letra mayúscula</strong></li>
+                <li id="numero" class="invalid" #numero>Al menos <strong>un número</strong></li>
+                <li id="length" class="invalid" #length>Mínimo <strong>8 caracteres</strong></li>
+            </ul>
+        </div>
+
+
+        <div class="modal-footer">
+             <button id="comprobar" type="submit" class="form-control btn btn-primary" name="comprobar" (click)="animacion()"
+                onclick="comprobar()">Comprobar</button>
+                
+            <button id="send" type="submit" class="form-control btn btn-primary" name="enviar" (click)="animacion()"
+                onclick="pushData()">Registrarse</button>
+        </div>
+
+        <p id="data"></p>
+
+        <div class="checkbox2">
+            <label>
+                <input type="checkbox"> Recordar sesión
+            </label>
+        </div>
+        <br>
+
+        <div class="checkbox2">
+            <label>
+                <div class="help-block text-right"><a href="">Recordar contraseña</a></div>
+            </label>
+
+            <div class="bottom text-center">
+                ¿No tienes cuenta? <a href="/registro"><b>Crea una cuenta</b></a>
+            </div>
+
+        </div>
+        <br>
+
+    </div>
+
+
+    <!--FOOTER-->
+    <footer class="grey darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">BookTeam</h5>
+                    <p class="grey-text text-lighten-4">Puede contactar con nosotros a través de nuestras redes
+                        sociales.
+                        Asimismo,
+                        nos encontramos en La Laguna, Tenerife.</p>
+                    <p class="grey-text text-lighten-4"> <b> Teléfono de contacto: 922814774. </b></p>
+                    <p class="grey-text text-lighten-4"> <b> Correo electrónico: bookteam@gmail.com </b></p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Contáctanos</h5>
+                    <ul>
+                        <div class="col ">
+                            <li><a class="grey-text text-lighten-3" href="#!">Instagram <img
+                                        class="col s2, footer-image" src="images/insta.png" alt="Instagram Icon" /></a>
+                            </li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Facebook <img class="col s2, footer-image"
+                                        src="images/facebook.png" alt="Facebook Icon" /></a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Twitter <img class="col s2, footer-image"
+                                        src="images/twitter.png" alt="Twitter Icon" /></a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Tumblr <img class="col s3, footer-image"
+                                        src="images/tum.png" alt="Tumblr Icon" /></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="grey darken-3">
+                © 2019 BookTeam. All Rights Reserved.
+                <a class="grey-text text-lighten-4 right" href="#!">BookTeam</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
