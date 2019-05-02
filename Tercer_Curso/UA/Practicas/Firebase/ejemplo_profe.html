@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Firebase Cliente Web</title>
+
+<script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAcyaUoW9rSsbAiG1v2LE9oF-IG1q9-Jy8",
+    authDomain: "miapwuya.firebaseapp.com",
+    databaseURL: "https://miapwuya.firebaseio.com",
+    projectId: "miapwuya",
+    storageBucket: "miapwuya.appspot.com",
+    messagingSenderId: "603618055596"
+  };
+  firebase.initializeApp(config);
+  //Referencia a la base de datos
+  var database = firebase.database(); 
+  var referencia = database.ref('cronica');
+  //Escribir un documento
+  referencia.set({
+        autor: 'Gabriel García Márquez',
+        año: 1981,
+        título: 'Crónica de una muerte anunciada'
+    });
+   
+</script>
+</head>
+<body>
+    <h1>Test con Firebase</h1>    
+    <p id="infoFire"> </p>
+</body>
+</html>

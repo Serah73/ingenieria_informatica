@@ -1,0 +1,33 @@
+#bookicon {
+    width: 50px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footer-image {
+    height: 20px;
+    width: auto;
+}
+
+
+.body{
+    padding-left: 20px;
+}
+
+
+.tags{
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 15px;
+    
+}
+
+.id_bloque{
+    text-align:center;
+    padding-top: 20px;
+
+}
+
+#send{
+    visibility: hidden;
+}
