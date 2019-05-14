@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>BookTeam</title>
+
+    <script src="http://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/bookteam.css" />
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
+
+    <!-- <script src="js/login.js"></script> -->
+    <meta charset="UTF-8">
+    <title>BookTeam</title>
+
+    <script src="http://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+</head>
+
+<body>
+
+    <body>
+
+        <div class="navbar-fixed">
+            <nav class="cyan darken-2" role="navigation">
+    
+                <div class="nav-wrapper">
+                    <a class="brand-logo center" href="inicio.html"><img class="col s1" id="bookicon" src="images/icon.png"
+                            alt="logo pagina" /><em>BookTeam</em></a>
+    
+                    <ul class="left hide-on-med-and-down">
+                        <li><a href="inicio.html">Inicio</a></li>
+                        <li><a href="">Biblioteca</a></li>
+                        <li><a href="">Autores</a></li>
+                        <li><a href="">Foro</a></li>
+                        <li><a href="quedada.html">Quedada</a></li>
+                    </ul>
+    
+                    <ul class="right hide-on-med-and-down">
+                        <li class="active"><a id="signup" href="">Registro</a></li>
+                        <li><a id="login" href="login.html">Iniciar sesión</li>
+                        <li><a id="logout" href="login.html">Logout</a></li>
+                    </ul>
+    
+                </div>
+            </nav>
+        </div>
+        <br> <br>
+
+        <div id="container">
+
+            <form>
+
+                <b>Correo:</b><br>
+                <input type="text" id="mail" name="Correo" placeholder="Introduzca su correo." aria-label="Mail" aria-describedby="Introduzca su mail" #mail required />
+                <p id="campo_mail">En el anterior campo debes introducir tu correo usando el siguiente formato:
+                    correo@correo.correo.</p>
+                <br>
+
+
+
+                <b>Contraseña:</b><br>
+                <input type="password" id="pswd" name="pswd" placeholder="Introduzca su contraseña." aria-label="Contraseña" aria-describedby="Introduzca la contraseña" #pswd required />
+                <p id="campo_pass">En el anterior campo debes introducir la contraseña.</p>
+
+                <br>
+
+            </form>
+
+            <div class="modal-footer">
+                <button id="enviar" role="button" type="submit" class="form-control btn btn-primary" name="enviar">Registrarse</button>
+
+            </div>
+            <br>
+
+
+            <p id="data"></p>
+
+            <p id="data"></p>
+
+            <div class="checkbox2" role="checkbox" aria-checked="false" tabindex="0">
+                <label>
+                    <input type="checkbox" id="chk1-label">
+                    <label for="chk1-label">Recordar sesión</label>
+                    <!--JS, onclick, aria-checked-->
+                </label>
+            </div>
+
+
+            <div class="checkbox2">
+                <label>
+                    <div class="help-block text-right"><a href="">Recordar contraseña</a></div>
+                </label>
+            </div>
+            
+            <br>
+
+        </div>
+
+
+        <!--FOOTER-->
+        <footer class="grey darken-4" role="contentinfo">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h1 class="white-text h2-font">BookTeam</h1>
+                <p class="grey-text text-lighten-4">Puede contactar con nosotros a través de nuestras redes sociales. Asimismo,
+                nos encontramos en La Laguna, Tenerife.</p>
+                <p class="grey-text text-lighten-4"> <b> Teléfono de contacto: 922814774. </b></p>
+                <p class="grey-text text-lighten-4"> <b> Correo electrónico: bookteam@gmail.com </b></p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h1 class="white-text h2-font">Contáctanos</h1>
+                <ul>
+                <div class="col ">
+                  <li><a class="grey-text text-lighten-3" href="#!">Instagram <img  class="col s2, footer-image" src="images/insta.png" alt="Instagram Icon" /></a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Facebook <img  class="col s2, footer-image" src="images/facebook.png" alt="Facebook Icon"/></a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Twitter <img  class="col s2, footer-image" src="images/twitter.png" alt="Twitter Icon"/></a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Tumblr <img  class="col s3, footer-image" src="images/tum.png" alt="Tumblr Icon"/></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="grey darken-3">
+            © 2019 BookTeam. All Rights Reserved.
+            <a class="grey-text text-lighten-4 right" href="#!">BookTeam</a>
+            </div>
+          </div>
+        </footer>
+
+        <script src="js/registro.js"></script>
+
+    </body>
+
+</html>
