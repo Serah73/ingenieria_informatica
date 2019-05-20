@@ -1,0 +1,60 @@
+#container_a {
+    position: relative;
+    width: 20%;
+}
+  
+h4{
+    text-align: center;
+}
+
+.image_a {
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+  
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    
+
+    /*text*/
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+
+}
+  
+#container_a:hover .image_a {
+    opacity: 0.3;
+}
+  
+#container_a:hover .middle {
+    opacity: 1;
+}
+ 
+.author_name{
+    text-align: center;
+    font-weight: bold;
+}
+
+a{
+    color: white;
+}
+
+@media only screen 
+and (max-width : 1199px) {
+
+    .image_a {
+        width: 200px;
+    }
+}
+
+ 

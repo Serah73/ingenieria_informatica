@@ -1,0 +1,71 @@
+tbody {
+    background-color: rgb(241, 241, 241);
+   
+}
+
+#table_libros{ 
+
+    width: auto;
+    height: auto;
+    font-size: 1.1em;
+    font-style: normal;
+    padding: 7%;
+    margin:7%;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+#table_libros tr:hover{ 
+    background: rgb(199, 224, 238);
+
+}
+
+#sinopsis{
+    width: 600px; 
+   
+}
+
+#send{
+    visibility: hidden;
+}
+
+.input_append{
+
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 100px;
+    margin-right: 100px;     
+}
+
+.modal-footer{
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 100px;
+    margin-right: 100px;  
+}
+
+
+.ec-stars-wrapper {
+
+	font-size: 0;
+	display: inline-block;
+}
+.ec-stars-wrapper a {
+	text-decoration: none;
+	display: inline-block;
+	font-size: 32px;
+	font-size: 2rem;
+	
+	color: rgb(110, 145, 160);
+}
+
+.ec-stars-wrapper:hover a {
+	color: rgb(251, 253, 107);
+}
+
+.ec-stars-wrapper > a:hover ~ a {
+	color: #888;
+}

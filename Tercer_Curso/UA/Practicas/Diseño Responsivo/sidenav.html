@@ -1,0 +1,286 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import style-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="css/bookteam.css" />
+
+    <title>BookTeam - Inicio</title>
+</head>
+
+<!---------------------------------NAVBAR------------------------------------------>
+
+<!--Navbar con Left Aligned Links-->
+
+<body>
+
+    <div class="navbar-fixed">
+            <nav class="cyan darken-2">
+                <div class="nav-wrapper">
+                    <a class="brand-logo center" href=""><img class="col s1" id="bookicon" src="images/icon.png" alt="logo pagina" /><em>BookTeam</em></a>
+                    <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="left hide-on-med-and-down">
+                        <li class="active"><a href="">Inicio</a></li>
+                        <li><a href="">Biblioteca</a></li>
+                        <li><a href="authors.html">Autores</a></li>
+                        <li><a href="libros.html">Libros</a></li>
+                        <li><a href="">Foro</a></li>
+                        <li><a href="quedadas.html">Quedadas</a></li>
+                    </ul>
+    
+                    <ul id="nav-mobile" class="cyan darken-3 right hide-on-med-and-down">
+                        <li class="logged-in" style="display: none;">
+                            <a href="#" class="modal-trigger" data-target="modal-account">Perfil</a>
+                        </li>
+                        <li class="logged-in" style="display: none;">
+                            <a href="#" id="logout">Cerrar Sesión</a>
+                        </li>
+                        <li class="logged-out" style="display: none;">
+                            <a href="#" class=" modal-trigger " data-target="modal-login">Iniciar sesión</a>
+                        </li>
+                        <li class="logged-out" style="display: none;">
+                            <a href="#" class="modal-trigger" data-target="modal-signup">Registrarse</a>
+                        </li>
+                        </span>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+
+<!--SIDENAV-->
+
+  <ul class="sidenav" id="mobile-links">
+    <li><a href="">Home</a></li>
+    <li><a href="">About</a></li>
+    <li><a href="">Contact</a></li>
+  </ul>
+
+  <!-- SIGN UP MODAL -->
+  <div id="modal-signup" class="modal">
+        <div class="modal-content">
+            <h4>Registrarse</h4><br />
+            <form id="signup-form">
+                <div class="input-field">
+                    <input type="email" id="signup-email" required />
+                    <label for="signup-email">Correo electrónico</label>
+                    <p>En el anterior campo debes introducir tu correo usando el siguiente formato:
+                        correo@correo.correo.</p>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="signup-password" required />
+                    <label for="signup-password">Contraseña</label>
+                    <p>En el anterior campo debes introducir la contraseña. La contraseña debe cumplir los siguientes
+                        criterios:</p>
+                    <ul>
+
+                        <li>Contener una letra.</li>
+                        <li>Contener una letra mayúscula.</li>
+                        <li>Contener un número.</li>
+                        <li>Tener un tamaño mínimo de 8 caracteres.</li>
+
+                    </ul>
+                </div>
+
+                <button class="btn cyan darken-2 z-depth-0">Registrarse</button>
+                <p class="error red-text center-align"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- LOGIN MODAL -->
+    <div id="modal-login" class="modal">
+        <div class="modal-content">
+            <h4>Iniciar sesión</h4><br />
+            <form id="login-form">
+                <div class="input-field">
+                    <input type="email" id="login-email" required />
+                    <label for="login-email">Correo electrónico</label>
+                    <p>Introduzca su correo electrónico en el campo anterior.</p>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="login-password" required />
+                    <label for="login-password">Contraseña</label>
+                    <p>Introduzca su contraseña en el campo anterior.</p>
+                </div>
+                
+                <button class="btn cyan darken-2 z-depth-0">Login</button>
+                <p class="error pink-text center-align"></p>
+                
+                
+               
+            </form>
+
+
+
+
+        </div>
+    </div>
+
+    <!-- ACCOUNT MODAL -->
+    <div id="modal-account" class="modal">
+        <div class="modal-content center-align">
+            <h4>Perfil personal</h4><br />
+            <div class="account-details"></div>
+        </div>
+    </div>
+
+    
+    <!-----------------------------------CONTENT---------------------------------------->
+
+
+    <!-- Carousel -->
+    <div class="carousel carousel-slider">
+        <a class="carousel-item" href="#one!"><img src="images/jovenes2.jpg"> </a>
+        <a class="carousel-item" href="#two!"><img src="images/maria-duenas-firma.jpg"></a>
+        <a class="carousel-item" href="#three!"><img src="images/blue-jeans-firma2.jpg"></a>
+        <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+    </div>
+
+
+    <br>
+    <div class="container">
+        <div class="section">
+            <!--   Icon Section   -->
+            <div class="row">
+                <!--COLUMNA 1-->
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">import_contacts</i></h2>
+                        <h5 class="center">Variedad </h5>
+
+                        <p class="light">
+                            Contamos con un gran número de libros y otros documentos disponibles
+                            para su lectura. A través de las distintas reuniones de lectura que se realizan mensualmente
+                            podrá leer
+                            junto a nosotros una gran cantidad de libros entre ellos destacamos novelas y poemarios.
+                        </p>
+                    </div>
+                </div>
+
+                <!--COLUMNA 2-->
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">create</i></h2>
+                        <h5 class="center">Soporte para escritores</h5>
+
+                        <p class="light">
+                            Ayudamos a visualizar y darse a conocer a escritores amateur. Conocerá a aquellos escritores
+                            con más auge en estos momentos, además de información sobre sus distintas obras.
+                        </p>
+                    </div>
+                </div>
+
+                <!--COLUMNA 3-->
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+                        <h5 class="center">Foro</h5>
+
+                        <p class="light">Podrá mantener una relación constante con los miembros de la página a través
+                            del foro, obtener ayuda y recomendaciones de otros lectores.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br><br>
+        <br><br>
+    </div>
+    
+
+    <!---------------------------------FOOTER------------------------------------------>
+
+
+    <footer class="grey darken-4">
+        <div class="container">
+            <div class="row">
+
+                <div class="col l6 s12">
+                    <h5 class="white-text">BookTeam</h5>
+                    <p class="grey-text text-lighten-4">Puede contactar con nosotros a través de nuestras redes
+                        sociales. Asimismo,nos encontramos en La Laguna, Tenerife.</p>
+                    <p class="grey-text text-lighten-4"> <b> Teléfono de contacto: 922814774. </b></p>
+                    <p class="grey-text text-lighten-4"> <b> Correo electrónico: bookteam@gmail.com </b></p>
+                </div>
+
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Contáctanos</h5>
+                    <ul>
+                        <div class="col ">
+                            <li><a class="grey-text text-lighten-3" href="#!">Instagram <img
+                                        class="col s2, footer-image" src="images/insta.png" alt="Instagram Icon" /></a>
+                            </li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Facebook <img class="col s2, footer-image"
+                                        src="images/facebook.png" alt="Facebook Icon" /></a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Twitter <img class="col s2, footer-image"
+                                        src="images/twitter.png" alt="Twitter Icon" /></a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Tumblr <img class="col s3, footer-image"
+                                        src="images/tum.png" alt="Tumblr Icon" /></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="grey darken-3">
+                <p class="white-text">2019 BookTeam. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>    
+
+
+
+    <!----------------------------------SCRIPTS----------------------------------------->
+    <!--JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!--Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-functions.js"></script>
+
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDLJUI3VYgL53qdHOXEzlNlPi1uR2K0TcY",
+            authDomain: "uya3ro.firebaseapp.com",
+            databaseURL: "https://uya3ro.firebaseio.com",
+            projectId: "uya3ro",
+            storageBucket: "uya3ro.appspot.com",
+            messagingSenderId: "905524222112"
+        };
+        firebase.initializeApp(config);
+
+        // make auth and firestore references
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        const functions = firebase.functions();
+
+        // update firestore settings
+        db.settings({ timestampsInSnapshots: true });
+    </script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/validate.js"></script>
+
+  <!-- Compiled and minified JavaScript -->
+
+  <script>
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+    });
+  </script>
+</body>
+</html>
+
