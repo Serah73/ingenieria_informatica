@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import style-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="css/bookteam.css">
+    <link type="text/css" rel="stylesheet" href="css/font.css">
+    <link type="text/css" rel="stylesheet" href="css/libros.css">
+    <title>BookTeam - Libros</title>
+</head>
+
+<!---------------------------------NAVBAR------------------------------------------>
+
+<!--Navbar con Left Aligned Links-->
+
+<body>
+
+
+    <div class="navbar-fixed" role="navigation" aria-label="Barra de navegación">
+        <nav class="grey darken-4">
+            <div class="nav-wrapper">
+                <a class="brand logo left" href="index_esp.html">
+                    <img class="col s1" id="bookicon" src="images/icon.png" alt=""><em
+                        id="titulo">BookTeam</em>
+                </a>
+                <a href="#" class="sidenav-trigger left" data-target="mobile-links">
+                    <i class="material-icons">menu</i>
+                </a>
+
+                <div id="leftnav" role="navigation" aria-labelledby="leftnavheading" aria-label="izquierda">
+                    <div id="leftnavheading">
+                        <ul class="left hide-on-med-and-down">
+                            <li><a href="authors_esp.html" class="page" alt="Autores">Autores<img alt="" class="flag"
+                                        src="images/author.png"></a></li>
+                            <li class="active"><a href="libros_esp.html" class="page" alt="Libros">Libros<img alt=""
+                                        class="flag" src="images/book.png"></a></li>
+                            <li><a href="quedadas_esp.html" class="page" alt="Quedadas">Quedadas<img alt="" class="flag"
+                                        src="images/location.png"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="rightnav" role="navigation" aria-labelledby="rightnavheading" aria-label="derecha">
+                    <div id="rightnavheading">
+                        <ul id="nav-mobile" class="grey darken-4 right hide-on-med-and-down">
+                            <li>
+                                <a href="libros_eng.html" class="page"> Switch to english<img alt="" class="flag"
+                                        src="images/flag.png"></a>
+                            </li>
+                            <li class="logged-in">
+                                <a href="#" class="modal-trigger page" data-target="modal-account">Perfil</a>
+                            </li>
+                            <li class="logged-in">
+                                <a href="#" id="logout1">Cerrar Sesión</a>
+                            </li>
+                            <li class="logged-out">
+                                <a href=" #" class=" modal-trigger page" data-target="modal-login">Iniciar
+                                    sesión<img alt="" class="flag" src="images/login.png"></a>
+                            </li>
+                            <li class="logged-out">
+                                <a href="#" class="modal-trigger page" data-target="modal-signup">Registrarse<img alt=""
+                                        class="flag" src="images/sign.png"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <!--SIDENAV-->
+    <div id="menu_responsivo" role="navigation" aria-label="mobile-nav">
+        <ul class="sidenav" id="mobile-links">
+            <li><a href="index_esp.html">Inicio</a></li>
+            <li><a href="authors_esp.html">Autores</a></li>
+            <li class="active"><a href="libros_esp.html">Libros</a></li>
+            <li><a href="quedadas_esp.html">Quedadas</a></li>
+            <li><a href="libros_eng.html"> Switch to english<img alt="Cambiar idioma en versión móvil" class="flag"
+                        src="images/flag.png"></a></li>
+            <li class="logged-in"><a href="#" class="modal-trigger" data-target="modal-account">Perfil</a></li>
+            <li class="logged-in"><a href="#" id="logout">Cerrar sesión</a></li>
+            <li class="logged-out"><a href="#" class=" modal-trigger" data-target="modal-login">Iniciar sesión</a></li>
+            <li class="logged-out"><a href="#" class="modal-trigger" data-target="modal-signup">Registrarse</a></li>
+        </ul>
+    </div>
+
+
+    <!-- SIGN UP MODAL -->
+    <div id="modal-signup" class="modal" role="complementary" aria-label="Registro">
+        <div class="modal-content">
+            <h1 class="h-font-title center">Registrarse</h1><br />
+            <div class="instrucciones">
+                <p class="letra">Todos los campos obligatorios se muestran en rojo y se marcan con un asterisco.</p>
+            </div>
+            <div id="formulario2" role="form">
+                <form id="signup-form">
+                    <div class="input-field">
+
+                        <input type="email" id="signup-email" autocomplete="on" required />
+
+                        <label for="signup-email">Correo electrónico
+
+                            <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                        </label>
+
+                        <div role="region" aria-live="polite" aria-labelledby="register-mail">
+                            <p id="register-mail"> En el anterior campo debes introducir el correo electrónico, con el
+                                siguiente formato: correo@correo.com </p>
+                        </div>
+
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="signup-password" autocomplete="on" required />
+                        <label for="signup-password">Contraseña
+                            <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                        </label>
+                        <div role="region" aria-live="polite" aria-labelledby="register-pwd">
+                            <p id="register-pwd"> En el anterior campo debes introducir la contraseña. La contraseña
+                                debe cumplir los
+                                siguientes criterios: </p>
+                        </div>
+                        <ul>
+
+                            <li id="li_1">Contener una letra.</li>
+                            <li id="li_2">Contener una letra mayúscula.</li>
+                            <li id="li_3">Contener un número.</li>
+                            <li id="li_4">Tener un tamaño mínimo de 8 caracteres.</li>
+
+                        </ul>
+                    </div>
+
+                    <button class="btn cyan darken-2 z-depth-0" onclick="registerMail()">Registrarse</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- LOGIN MODAL -->
+    <div id="modal-login" class="modal" role="complementary" aria-label="Inicio_sesion">
+        <div class="modal-content">
+            <h1 class="h-font-center center">Iniciar sesión</h1><br />
+            <div class="instrucciones">
+                <p class="letra">Todos los campos obligatorios se muestran en rojo y se marcan con un asterisco.</p>
+            </div>
+            <div id="formulario" role="form" aria-labelledby="login-form">
+                <form id="login-form">
+                    <div class="input-field">
+                        <input type="email" id="login-email" autocomplete="on" required />
+                        <label for="login-email">Correo electrónico
+                            <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                        </label>
+                        <div role="region" aria-live="polite" aria-labelledby="loginMail">
+                            <p id="loginMail"> Introduzca su correo electrónico en el campo anterior. </p>
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="login-password" autocomplete="on" required />
+                        <label for="login-password">Contraseña
+                            <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                        </label>
+                        <div role="region" aria-live="polite" aria-labelledby="loginRdy">
+                            <p id="loginRdy"> Introduzca su contraseña en el campo anterior. </p>
+                        </div>
+                    </div>
+
+                    <button class="btn cyan darken-2 z-depth-0" onclick="loginReady()">Iniciar sesión</button>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ACCOUNT MODAL -->
+    <div id="modal-account" class="modal" role="complementary" aria-label="Perfil">
+        <div class="modal-content center-align">
+            <h1 class="h-font center" tabindex="0">Perfil personal</h1><br />
+            <div tabindex="0" class="account-details"></div>
+        </div>
+    </div>
+
+    <!-----------------------------------CONTENT---------------------------------------->
+
+    <div id="content" role="main" aria-label="content">
+        <div id="container" role="complementary" aria-labelledby="libros">
+            <h1 tabindex="0" class="center" id="libros">Libros</h1>
+            <div id="tabla" role="complementary" aria-labelledby="table_libros">
+                <table id="table_libros" tabindex="0">
+                    <caption>Libros disponibles</caption>
+                    <th>
+                        <tr>
+                            <td> <b> Título </b> </td>
+                            <td> <b> Autor </b> </td>
+                            <td class="mov_hide"> <b> Año de publicación </b> </td>
+                            <td> <b> Género </b> </td>
+                            <td id="sinopsis" class="mov_hide"> <b> Sinopsis </b> </td>
+                            <td> <b> Puntuación </b> </td>
+                            <td class="mov_hide"> <b> Comprar </b> </td>
+                        </tr>
+                    </th>
+                    <tbody id="table_body">
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div id="formulario3" role="form">
+
+                <form class="input_append">
+                    <div>
+
+                        <div id="Titulo_" tabindex="0"> Califica un libro </div>
+                        <p><b tabindex="0">Rellena el formulario para calificar un libro, ayudarás a los miembros
+                                de BookTeam a conocer tu opinión.</b>
+                            <br> </p>
+                        <p class="letra" tabindex="0">Todos los campos obligatorios se muestran en rojo y se marcan con
+                            un
+                            asterisco.
+                        </p>
+
+                    </div>
+
+
+                    <div tabindex="0" role="region" aria-label="campos requeridos">
+
+                        <br>
+                        <div tabindex="0" class="requerido">
+                            <b>Título del libro:</b>
+                            <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                            <br>
+                        </div>
+                        <input title="Titulo del libro" type="text" id="titulo_dato" name="Título del libro"
+                            aria-describedby="campo_titulo" placeholder="Introduzca el título del libro."
+                            autocomplete="on" required />
+                        <p tabindex="0" id="campo_titulo">En el anterior campo debes introducir el título del libro
+                            a calificar.
+                        </p>
+                        <br>
+
+                        <div tabindex="0" class="requerido">
+                            <b>Autor del libro:</b>
+                            <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                            <br>
+                        </div>
+                        <input type="text" id="autor_libro" name="autor_libro" title="Autor del libro"
+                            aria-describedby="campo_autor" placeholder="Introduzca el autor del libro." required />
+                        <p tabindex="0" id="campo_autor"> En el anterior campo debes introducir el autor del libro a
+                            calificar.
+                        </p>
+                        <br>
+
+                    </div>
+                    <div role="region" aria-label="calificacion" aria-describedby="campo_calificar">
+                        <p tabindex="0" id="campo_calificar"> Seleccione la puntuacion que quiere anotar, entre 1 y 5
+                            según el número de estrellas que escoja. Se actualizará automáticamente la puntuación</p>
+                        
+                        <p tabindex="0" id="necesita_loguearse">Debe loguearse para calificar un libro.</p>
+
+                        <div class="ec-stars-wrapper" tabindex="-1">
+
+                            <a tabindex="0" aria-label="Votar con una estrella" title="Votar con 1 estrellas"  onkeyup = "if(event.keyCode == 13) calificar(1)", onclick="calificar(1)">&#9733;</a>
+                            <a tabindex="0" aria-label="Votar con dos estrella" title="Votar con 2 estrellas"   onkeyup = "if(event.keyCode == 13) calificar(2)", onclick="calificar(2)">&#9733;</a>
+                            <a tabindex="0" aria-label="Votar con tres estrella" title="Votar con 3 estrellas"  onkeyup = "if(event.keyCode == 13) calificar(3)",  onclick="calificar(3)">&#9733;</a>
+                            <a tabindex="0" aria-label="Votar con cuatro estrella" title="Votar con 4 estrellas"  onkeyup = "if(event.keyCode == 13) calificar(4)", onclick="calificar(4)">&#9733;</a>
+                            <a tabindex="0" aria-label="Votar con cinco estrella" title="Votar con 5 estrellas"  onkeyup = "if(event.keyCode == 13) calificar(5)", onclick="calificar(5)">&#9733;</a>
+
+                        </div>
+                        <p tabindex="0" id="incorrecto"></p>
+                    </div>
+
+
+
+                    <p tabindex="0" id="operacion" role="alert" aria-label="Puntuacion añadida">Puntuación añadida
+                        correctamente.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!---------------------------------FOOTER------------------------------------------>
+
+
+
+    <div id="footer" role="contentinfo" aria-label="Footer" tabindex="0">
+        <footer class="grey darken-4">
+            <div class="container">
+                <div class="row r-space">
+
+                    <div class="col l6 s12" tabindex="0">
+                        <h1 class="white-text h-font">BookTeam</h1>
+                        <p class="eslogan">Meet & Read</p>
+                        <p class="grey-text text-lighten-4">Puede contactar con nosotros a través de nuestras redes
+                            sociales. Asímismo, nos encontramos en La Laguna, Tenerife.</p>
+                        <p class="grey-text text-lighten-4"> Teléfono de contacto: 922814774. </p>
+                        <p class="grey-text text-lighten-4"> Correo electrónico: bookteam@gmail.com </p>
+                    </div>
+
+                    <div class="col l4 offset-l2 s12">
+                        <h1 tabindex="0" class="white-text h-font">Contáctanos</h1>
+                        <div class="col ">
+                            <div class="Lista" id="lista_contactos_contenedor">
+                                <ul id="lista_contactos">
+                                    <li id="elemento_instagram"><a class="grey-text text-lighten-3"
+                                            href="https://www.instagram.com/?hl=en"> <u>Instagram </u>
+                                            <img class="col s2, footer-image" src="images/insta.png" alt="" /></a>
+                                    </li>
+                                    <li id="elemento_facebook"><a class="grey-text text-lighten-3"
+                                            href="https://www.facebook.com/"><u>Facebook</u> <img
+                                                class="col s2, footer-image" src="images/facebook.png" alt="" /></a>
+
+                                    </li>
+                                    <li id="elemento_twitter"><a class="grey-text text-lighten-3"
+                                            href="https://twitter.com/"> <u>
+                                                Twitter</u> <img class="col s2, footer-image" src="images/twitter.png"
+                                                alt="" /></a>
+                                    </li>
+                                    <li id="elemento_tumblr"><a class="grey-text text-lighten-3"
+                                            href="https://www.tumblr.com/"> <u>
+                                                Tumblr </u> <img class="col s4, footer-image" src="images/tum.png"
+                                                alt="" /></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <div class="test grey darken-3">
+                    <a class="grey-text text-lighten-3"
+                        href="https://firebasestorage.googleapis.com/v0/b/uya3ro.appspot.com/o/Politica%2Fpolitica_esp.pdf?alt=media&token=4c04baa9-10e5-4b91-85fd-c8b5fef87510">
+
+                        <u id="politica"> 2019 BookTeam. All Rights Reserved. </u>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!----------------------------------SCRIPTS----------------------------------------->
+
+
+
+    <!--JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDLJUI3VYgL53qdHOXEzlNlPi1uR2K0TcY",
+            authDomain: "uya3ro.firebaseapp.com",
+            databaseURL: "https://uya3ro.firebaseio.com",
+            projectId: "uya3ro",
+            storageBucket: "uya3ro.appspot.com",
+            messagingSenderId: "905524222112"
+        };
+        firebase.initializeApp(config);
+
+        // make auth and firestore references
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        const functions = firebase.functions();
+
+        // update firestore settings
+        db.settings({ timestampsInSnapshots: true });
+    </script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/libros.js"></script>
+    <script src="scripts/validate.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
+</body>
+
+</html>

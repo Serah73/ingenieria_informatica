@@ -1,8 +1,85 @@
+/********ETIQUETAS*********/
+
+footer {
+    
+    bottom: 0;
+    width: 100%;
+    margin: auto;
+    flex-wrap: wrap;
+    position: absolute;
+}
+
+body {
+    background-color: rgb(241, 241, 241);
+}
+
+label[for=signup-email]{  
+    font-size: 1.0rem;  
+    color: #000;
+} 
+
+label[for=signup-password]{  
+    font-size: 1.0rem;  
+    color: #000;
+} 
+
+label[for=login-email]{  
+    font-size: 1.0rem;  
+    color: #000;
+} 
+
+label[for=login-password]{  
+    font-size: 1.0rem;  
+    color: #000;
+} 
+
+/********IDS*********/
+
 #bookicon {
-    width: 50px;
+    width: 65px;
     height: auto;
     display: inline-block;
     vertical-align: middle;
+    padding-bottom: 10%;
+}
+
+#titulo{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: -5px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.page{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#box {
+    font-size: 16px;
+}
+    
+#logout1{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#img_galeria{
+    width: 100%;
+}
+
+#logged-in{
+    display: none;
+}
+  
+#logged-out{
+    display: none;
+}
+/********CLASES*********/
+
+.image_foot{
+    font-size: 1.5em;
 }
 
 .footer-image {
@@ -10,11 +87,27 @@
     width: auto;
 }
 
+.letra{
+    font-size: 1.1rem;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-display: center;
+ 
+}
+
+.mandatory-asterisk {
+    color: #e03737;
+    font-size: 1.5rem;
+    line-height: 0;
+    border: none!important;
+    text-decoration: none!important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 .body{
     padding-left: 20px;
 }
-
 
 .tags{
      font-family: Arial, Helvetica, sans-serif;
@@ -25,22 +118,96 @@
 .id_bloque{
     text-align:center;
     padding-top: 20px;
+    font: red;
 
 }
 
-#send{
-    visibility: hidden;
+.footer-down {
+    bottom: 0;
+    width: 100%;
+    background-color: #303030;
 }
 
-#logout{
-    visibility: hidden;
+.carrousel-info{
+    text-align: center;
+    font-size: 1.5rem;
 }
 
-#exito{
-    display: none;  
+.valid {
+    background: rgba(0, 0, 0, 0) no-repeat scroll 2px 6px;
+    color: rgb(111, 214, 91);
+    line-height: 21px;
+    padding-left: 22px;
+    content: "✔";
 }
 
-#error_log{
-    color: red;
-    display: none; 
+.valid:before {
+  position: relative;
+  left: -15px;
+  content: "✔";
 }
+
+.invalid {
+    background: rgba(0, 0, 0, 0) no-repeat scroll 2px 6px;
+    color: rgb(235, 92, 92);
+    line-height: 21px;
+    padding-left: 22px;
+    content: "✖";
+}
+
+.invalid:before {
+  position: relative;
+  left: -15px;
+  content: "✖";
+} 
+
+.borderfont{
+    text-shadow: 2px 0 0 #252625, -2px 0 0 #252625, 0 2px 0 #252625, 0 -2px 0 #252625, 1px 1px #252625, -1px -1px 0 #252625, 1px -1px 0 #252625, -1px 1px 0 #252625;
+}
+
+.flag{ 
+    height:25px;
+    max-width: 35px;
+    margin-left: 10px;
+}
+
+.thumbnail {
+    margin-top: 20px;
+}
+
+.caption {
+    margin-top: 20px;
+}
+
+/********MEDIA*********/
+
+@media only screen 
+and (max-width : 768px) {
+    #titulo{
+        display: none;
+    }
+
+    #bookicon{
+        position: fixed; 
+        left: 40%;
+    }
+
+    .mov_hide{
+        display: none;
+    }
+}
+
+@media print 
+and (max-width: 600px){
+    .navbar-fixed{
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import style-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="css/bookteam.css">
+    <link type="text/css" rel="stylesheet" href="css/font.css">
+    <link type="text/css" rel="stylesheet" href="css/quedadas.css">
+    <title>BookTeam - Quedadas</title>
+</head>
+
+<!---------------------------------NAVBAR------------------------------------------>
+
+<!--Navbar con Left Aligned Links-->
+
+<body>
+    <div class="navbar-fixed" role="navigation" aria-label="Barra de navegación">
+        <nav class="grey darken-4">
+            <div class="nav-wrapper">
+                <a class="brand logo left" href="index_esp.html">
+                    <img class="col s1" id="bookicon" src="images/icon.png" alt="">
+                    <em id="titulo">BookTeam</em>
+                </a>
+                <a href="#" class="sidenav-trigger left" data-target="mobile-links">
+                    <i class="material-icons">menu</i>
+                </a>
+
+                <div id="leftnav" role="navigation" aria-labelledby="leftnavheading" aria-label="izquierda">
+                    <div id="leftnavheading">
+                        <ul class="left hide-on-med-and-down">
+                            <li><a href="authors_esp.html" class="page" alt="Autores">Autores<img alt=""
+                                        class="flag" src="images/author.png"></a></li>
+                            <li><a href="libros_esp.html" class="page" alt="Libros">Libros<img alt="" class="flag"
+                                        src="images/book.png"></a></li>
+                            <li class="active"><a href="quedadas_esp.html" class="page" alt="Quedadas">Quedadas<img
+                                        alt="" class="flag" src="images/location.png"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="rightnav" role="navigation" aria-labelledby="rightnavheading" aria-label="derecha">
+                    <div id="rightnavheading">
+                        <ul id="nav-mobile" class="grey darken-4 right hide-on-med-and-down">
+                            <li>
+                                <a href="quedadas_eng.html" class="page"> Switch to english<img alt=""
+                                        class="flag" src="images/flag.png"></a>
+                            </li>
+                            <li class="logged-in">
+                                <a href="#" class="modal-trigger page" data-target="modal-account">Perfil</a>
+                            </li>
+                            <li class="logged-in">
+                                <a href="#" id="logout1">Cerrar Sesión</a>
+                            </li>
+                            <li class="logged-out">
+                                <a href=" #" class=" modal-trigger page" data-target="modal-login">Iniciar
+                                    sesión<img alt="" class="flag" src="images/login.png"></a>
+                            </li>
+                            <li class="logged-out">
+                                <a href="#" class="modal-trigger page" data-target="modal-signup">Registrarse<img
+                                        alt="" class="flag" src="images/sign.png"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <!--SIDENAV-->
+    <div id="menu_responsivo" role="navigation" aria-label="mobile-nav">
+        <ul class="sidenav" id="mobile-links">
+            <li><a href="index_esp.html">Inicio</a></li>
+            <li><a href="authors_esp.html">Autores</a></li>
+            <li><a href="libros_esp.html">Libros</a></li>
+            <li class="active"><a href="quedadas_esp.html">Quedadas</a></li>
+            <li><a href="quedadas_eng.html"> Switch to english<img alt="Cambiar idioma en versión móvil" class="flag"
+                        src="images/flag.png"></a></li>
+            <li class="logged-in"><a href="#" class="modal-trigger" data-target="modal-account">Perfil</a></li>
+            <li class="logged-in"><a href="#" id="logout">Cerrar sesión</a></li>
+            <li class="logged-out"><a href="#" class=" modal-trigger" data-target="modal-login">Iniciar sesión</a></li>
+            <li class="logged-out"><a href="#" class="modal-trigger" data-target="modal-signup">Registrarse</a></li>
+        </ul>
+    </div>
+
+
+    <!-- SIGN UP MODAL -->
+    <div id="modal-signup" class="modal" role="complementary" aria-label="Registro">
+        <div class="modal-content">
+            <h1 class="h-font-title center" tabindex="0">Registrarse</h1><br />
+            <div class="instrucciones">
+                <p class="letra" tabindex="0">Todos los campos obligatorios se muestran en rojo y se marcan con un
+                    asterisco.</p>
+            </div>
+            <div id="formulario" role="form">
+                <form id="signup-form">
+                    <div class="input-field">
+
+                        <input type="email" id="signup-email" autocomplete="on" required />
+
+                        <label for="signup-email">Correo electrónico
+
+                            <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                        </label>
+
+                        <div role="region" aria-live="polite" aria-labelledby="register-mail" tabindex="0">
+                            <p id="register-mail"> En el anterior campo debes introducir el correo electrónico, con el
+                                siguiente formato: correo@correo.com </p>
+                        </div>
+
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="signup-password" autocomplete="on" required />
+                        <label for="signup-password">Contraseña
+                            <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                        </label>
+                        <div role="region" aria-live="polite" aria-labelledby="register-pwd" tabindex="0">
+                            <p id="register-pwd"> En el anterior campo debes introducir la contraseña. La contraseña
+                                debe cumplir los
+                                siguientes criterios: </p>
+                        </div>
+                        <ul tabindex="0">
+
+                            <li id="li_1">Contener una letra.</li>
+                            <li id="li_2">Contener una letra mayúscula.</li>
+                            <li id="li_3">Contener un número.</li>
+                            <li id="li_4">Tener un tamaño mínimo de 8 caracteres.</li>
+
+                        </ul>
+                    </div>
+
+                    <button class="btn cyan darken-2 z-depth-0" onclick="registerMail()"
+                        role="button">Registrarse</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- LOGIN MODAL -->
+    <div id="modal-login" class="modal" role="complementary" aria-label="Inicio_sesion">
+        <div class="modal-content">
+            <h1 class="h-font-center center" tabindex="0">Iniciar sesión</h1><br />
+            <div class="instrucciones">
+                <p class="letra" tabindex="0">Todos los campos obligatorios se muestran en rojo y se marcan con un
+                    asterisco.</p>
+            </div>
+            <div id="formulario2" role="form" aria-labelledby="login-form">
+                <form id="login-form">
+                    <div class="input-field">
+                        <input type="email" id="login-email" autocomplete="on" required />
+                        <label for="login-email">Correo electrónico
+                            <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                        </label>
+
+                        <div role="region" aria-live="polite" aria-labelledby="loginMail" tabindex="0">
+                            <p id="loginMail"> Introduzca su correo electrónico en el campo anterior. </p>
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="login-password" autocomplete="on" required />
+                        <label for="login-password">Contraseña
+                            <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                        </label>
+
+                        <div role="region" aria-live="polite" aria-labelledby="loginRdy" tabindex="0">
+                            <p id="loginRdy"> Introduzca su contraseña en el campo anterior. </p>
+                        </div>
+                    </div>
+
+                    <button class="btn cyan darken-2 z-depth-0" onclick="loginReady()" role="button">Iniciar
+                        sesión</button>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ACCOUNT MODAL -->
+    <div id="modal-account" class="modal" role="complementary" aria-label="Perfil">
+        <div class="modal-content center-align">
+            <h1 class="h-font center" tabindex="0">Perfil personal</h1><br />
+            <div tabindex="0" class="account-details"></div>
+        </div>
+    </div>
+
+
+    <!-----------------------------------CONTENT---------------------------------------->
+
+    <div id="content" role="main" aria-label="content">
+        <div id="container" role="complementary" aria-labelledby="quedadas">
+            <h1 tabindex="0" id="quedadas" class="center">Quedadas propuestas</h1>
+            <div id="tabla" role="complementary" aria-labelledby="table_quedadas">
+
+                <table tabindex="0" id="table_quedadas" #table_quedadas required>
+                    <caption>Próximas quedadas:</caption>
+                    <th>
+                        <tr>
+                            <td> <b> Fecha propuesta </b> </td>
+                            <td class="mov_hide"> <b> Usuario propietario </b> </td>
+                            <td> <b> Libro propuesto </b> </td>
+                            <td> <b> Lugar </b> </td>
+                            <td> <b> Hora </b> </td>
+                        </tr>
+                    </th>
+                    <tbody id="table_body2">
+
+
+                    </tbody>
+                </table>
+            </div>
+            <div id="obligatorio" tabindex="0">
+                <br>
+                <p class="letra">Todos los campos obligatorios se muestran en rojo y se marcan con un asterisco.</p>
+                <br>
+            </div>
+
+            <div id="formulario3" role="form">
+                <form class="input_append">
+
+                    <div class="campos_form">
+                        <div tabindex="0" class="requerido">
+                            <b>Correo de usuario:</b>
+                            <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                            <br>
+                        </div>
+
+                        <label for="correo">Correo</label>
+                        <input tabindex="0" type="text" id="correo" name="Correo de usuario"
+                            aria-describedby="campo_correo" placeholder="Introduzca su cuenta de correo de usuario."
+                            autocomplete="on" required />
+                        <p tabindex="0" id="campo_correo"> En el anterior campo debes introducir tu cuenta de correo de
+                            usuario.</p>
+                        <div role="region" aria-live="polite" aria-labelledby="assembly-mail">
+                            <p id="assembly-mail" tabindex="0"> El correo debe tener el siguiente formato:
+                                mail@mail.com. El correo
+                                debe
+                                ser igual al correo de la cuenta actual. </p>
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+
+                    <div tabindex="0" class="requerido">
+                        <b>Fecha de quedada:</b>
+                        <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                        <br>
+                    </div>
+
+
+                    <label for="fecha_quedada">Fecha de quedada</label>
+                    <input tabindex="0" type="date" id="fecha_quedada" name="Fecha de quedada"
+                        aria-describedby="campo_quedada" autocomplete="on" required />
+                    <p tabindex="0" id="campo_quedada"> En el anterior campo debes introducir tu fecha de quedada, debe
+                        ser mayor que la fecha actual.</p>
+                    <div role="region" aria-live="polite" aria-labelledby="assembly-date">
+                        <p id="assembly-date" tabindex="0"> Ejemplo: 15/09/2019 </p>
+                    </div>
+
+                    <br>
+                    <br>
+
+                    <div tabindex="0" class="requerido">
+                        <b>Hora:</b>
+                        <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                        <br>
+                    </div>
+
+                    <label for="hora">Hora</label>
+                    <input tabindex="0" type="time" id="hora" name="hora" aria-describedby="campo_hora" value="08:00:00"
+                        autocomplete="on" required />
+                    <p tabindex="0" id="campo_hora"> En el anterior campo debes introducir la hora de quedada.</p>
+                    <div role="region" aria-live="polite" aria-labelledby="assembly-hour">
+                        <p id="assembly-hour" tabindex="0"> Ejemplo: 10:00 </p>
+                    </div>
+                    <br>
+                    <br>
+
+                    <div tabindex="0" class="requerido">
+                        <b>Lugar:</b>
+                        <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                        <br>
+                    </div>
+
+                    <label for="lugar">Lugar</label>
+                    <input tabindex="0" type="text" id="lugar" name="Lugar" aria-describedby="campo_lugar"
+                        autocomplete="on" placeholder="Introduzca el lugar." required />
+                    <p tabindex="0" id="campo_lugar"> En el anterior campo debes introducir tu lugar de quedada.</p>
+                    <div role="region" aria-live="polite" aria-labelledby="assembly-place">
+                        <p id="assembly-place" tabindex="0"> Ejemplo: Sala de estudio </p>
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div tabindex="0" class="requerido">
+                        <b>Ciudad:</b>
+                        <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                        <br>
+                    </div>
+
+                    <label for="ciudad">Ciudad</label>
+                    <input tabindex="0" type="text" id="ciudad" name="ciudad" aria-describedby="campo_ciudad"
+                        placeholder="Introduzca la ciudad." required />
+                    <p tabindex="0" id="campo_ciudad"> En el anterior campo debes introducir la ciudad de quedada.</p>
+                    <div role="region" aria-live="polite" aria-labelledby="assembly-city">
+                        <p id="assembly-city" tabindex="0"> Ejemplo: Arrecife </p>
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div tabindex="0" class="requerido">
+                        <b>Calle:</b>
+                        <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                        <br>
+                    </div>
+                    <label for="calle">Calle</label>
+                    <input tabindex="0" onchange="console.log(document.getElementById('calle').value)" type="text"
+                        id="calle" name="calle" aria-describedby="campo_calle" placeholder="Introduzca la calle."
+                        autocomplete="on" required />
+                    <p tabindex="0" id="campo_calle">En el anterior campo debes introducir la calle de quedada.</p>
+                    <div role="region" aria-live="polite" aria-labelledby="assembly-street">
+                        <p id="assembly-street" tabindex="0"> Ejemplo: La Inés </p>
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div tabindex="0" class="requerido">
+                        <b>Edificio:</b>
+                        <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                        <br>
+                    </div>
+                    <label for="edificio">Edificio</label>
+                    <input tabindex="0" type="text" id="edificio" name="edificio" aria-describedby="campo_edificio"
+                        placeholder="Introduzca el edificio." autocomplete="on" required />
+                    <p tabindex="0" id="campo_edificio">En el anterior campo debes introducir el edificio de quedada.
+                    </p>
+                    <div role="region" aria-live="polite" aria-labelledby="assembly-building">
+                        <p id="assembly-building" tabindex="0">Ejemplo: El Palmar</p>
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div tabindex="0" class="requerido">
+                        <b>Puerta:</b>
+                        <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                        <br>
+                    </div>
+                    <label for="puerta">Puerta</label>
+                    <input tabindex="0" type="text" id="puerta" name="puerta" aria-describedby="campo_puerta"
+                        placeholder="Introduzca la puerta." autocomplete="on" required />
+                    <p tabindex="0" id="campo_puerta">En el anterior campo debes introducir el número de puerta.</p>
+                    <div role="region" aria-live="polite" aria-labelledby="assembly-door">
+                        <p id="assembly-door" tabindex="0">Ejemplo: 4º A</p>
+                    </div>
+
+                    <br>
+                    <br>
+                    <div tabindex="0" class="requerido">
+                        <b>Libro:</b>
+                        <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                        <br>
+                    </div>
+                    <label for="field1">Libro</label>
+                    <input tabindex="0" autocomplete="on" class="input" id="field1" name="prof1"
+                        aria-describedby="campo_libro" type="text" placeholder="Introduzca el título del libro."
+                        required />
+
+                    <p tabindex="0" id="campo_libro">En el anterior campo debes introducir el nombre del libro.</p>
+                    <div role="region" aria-live="polite" aria-labelledby="assembly-book">
+                        <p id="assembly-book" tabindex="0"> Ejemplo: El principito </p>
+                    </div>
+
+                </form>
+            </div>
+
+            <br>
+
+            <div class="modal-footer" role="region" aria-label="botones">
+                <div role="region" aria-labelledby="comprobar">
+                    <button id="comprobar" type="submit" class="form-control btn btn-primary" name="comprobar"
+                        onclick=" CheckCampo();" role="button">Comprobar</button>
+                </div>
+                <div>
+                    <p id ="incorrecto" tabindex="0"> Debe loguearse para registrar una quedada </p>
+                </div>
+              
+                <div class="separacion_boton" role="region" aria-labelledby="send">
+                    <button id="send" type="submit" class="form-control btn btn-primary" name="enviar"
+                        (click)="animacion()" onclick="pushData();" role="button">Registrar quedada</button>
+                </div>
+            </div>
+
+            <p tabindex="0" id="operacion" role="alert" aria-label="Quedada añadida">Quedada añadida correctamente.</p>
+
+        </div>
+    </div>
+
+
+
+    <!---------------------------------FOOTER------------------------------------------>
+
+
+    <div id="footer" role="contentinfo" aria-label="Footer" tabindex="0">
+        <footer class="grey darken-4">
+            <div class="container">
+                <div class="row r-space">
+
+                    <div class="col l6 s12" tabindex="0">
+                        <h1 class="white-text h-font">BookTeam</h1>
+                        <p class="eslogan">Meet & Read</p>
+                        <p class="grey-text text-lighten-4">Puede contactar con nosotros a través de nuestras redes
+                            sociales. Asímismo, nos encontramos en La Laguna, Tenerife.</p>
+                        <p class="grey-text text-lighten-4"> Teléfono de contacto: 922814774. </p>
+                        <p class="grey-text text-lighten-4"> Correo electrónico: bookteam@gmail.com </p>
+                    </div>
+
+                    <div class="col l4 offset-l2 s12">
+                        <h1 tabindex="0" class="white-text h-font">Contáctanos</h1>
+                        <div class="col ">
+                            <div class="Lista" id="lista_contactos_contenedor">
+                                <ul id="lista_contactos">
+                                    <li id="elemento_instagram"><a class="grey-text text-lighten-3"
+                                            href="https://www.instagram.com/?hl=en"> <u>Instagram </u>
+                                            <img class="col s2, footer-image" src="images/insta.png" alt="" /></a>
+                                    </li>
+                                    <li id="elemento_facebook"><a class="grey-text text-lighten-3"
+                                            href="https://www.facebook.com/"><u>Facebook</u> <img
+                                                class="col s2, footer-image" src="images/facebook.png" alt="" /></a>
+
+                                    </li>
+                                    <li id="elemento_twitter"><a class="grey-text text-lighten-3"
+                                            href="https://twitter.com/"> <u>
+                                                Twitter</u> <img class="col s2, footer-image" src="images/twitter.png"
+                                                alt="" /></a>
+                                    </li>
+                                    <li id="elemento_tumblr"><a class="grey-text text-lighten-3"
+                                            href="https://www.tumblr.com/"> <u>
+                                                Tumblr </u> <img class="col s4, footer-image" src="images/tum.png"
+                                                alt="" /></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <div class="test grey darken-3">
+                    <a class="grey-text text-lighten-3"
+                        href="https://firebasestorage.googleapis.com/v0/b/uya3ro.appspot.com/o/Politica%2Fpolitica_esp.pdf?alt=media&token=4c04baa9-10e5-4b91-85fd-c8b5fef87510">
+
+                        <u id="politica"> 2019 BookTeam. All Rights Reserved. </u>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+
+    <!----------------------------------SCRIPTS----------------------------------------->
+
+
+    <!--JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDLJUI3VYgL53qdHOXEzlNlPi1uR2K0TcY",
+            authDomain: "uya3ro.firebaseapp.com",
+            databaseURL: "https://uya3ro.firebaseio.com",
+            projectId: "uya3ro",
+            storageBucket: "uya3ro.appspot.com",
+            messagingSenderId: "905524222112"
+        };
+        firebase.initializeApp(config);
+
+        // make auth and firestore references
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        const functions = firebase.functions();
+
+        // update firestore settings
+        db.settings({ timestampsInSnapshots: true });
+    </script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/libros.js"></script>
+    <script src="scripts/quedada.js"></script>
+    <script src="scripts/validate.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
+
+</body>
+
+</html>

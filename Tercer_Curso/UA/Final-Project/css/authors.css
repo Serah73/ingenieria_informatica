@@ -1,0 +1,97 @@
+/********ETIQUETAS*********/
+
+a{
+    color: white;
+}
+
+/********IDS*********/
+
+#info {
+    font-size: 16px;
+}
+
+#more {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#pausar {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#necesita_loguearse {
+    display: none;
+}
+
+#incorrecto {
+    display: none;
+}
+
+#reanudar {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#cancelar {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#download {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#prueba{
+    color: #000;
+}
+
+
+#storage{
+    padding-top: 50px;
+}
+
+#uploader {
+    margin-top: 15px;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+#archivo {
+    display: none;
+}
+
+#controles {
+    margin: 15px;
+    font-size: 1.0rem;
+}
+
+/********CLASES*********/
+
+.author_name{
+    text-align: center;
+    font-weight: bold;
+}
+
+/********MEDIA*********/
+
+@media only screen 
+and (max-width : 1199px) {   
+    #container_a {
+        width: 200px;
+    }
+}
+
+@media only screen 
+and (max-width : 3200px) {
+    footer {
+       bottom: 0;
+       width: 100%;
+       margin: auto;
+       flex-wrap: wrap;
+       position: relative;
+    }
+}

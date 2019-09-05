@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import style-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="css/bookteam.css">
+    <link type="text/css" rel="stylesheet" href="css/font.css">
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+    <title>BookTeam - Inicio</title>
+</head>
+
+
+<!---------------------------------NAVBAR------------------------------------------>
+
+<!--Navbar con Left Aligned Links-->
+
+<body>
+
+    <div class="navbar-fixed" role="navigation" aria-label="Navigation bar">
+        <nav class="grey darken-4">
+            <div class="nav-wrapper">
+                <a class="brand logo left" href="index_eng.html">
+                    <img class="col s1" id="bookicon" src="images/icon.png" alt="logo BookTeam"><em
+                        id="titulo">BookTeam</em>
+                </a>
+                <a href="#" class="sidenav-trigger left" data-target="mobile-links">
+                    <i class="material-icons">menu</i>
+                </a>
+
+                <div id="leftnav" role="navigation" aria-labelledby="leftnavheading" aria-label="izquierda">
+                    <div id="leftnavheading">
+                        <ul class="left hide-on-med-and-down">
+                            <li><a href="authors_eng.html" class="page" alt="Authors">Authors<img alt="" class="flag"
+                                        src="images/author.png"></a></li>
+                            <li><a href="libros_eng.html" class="page" alt="Books">Books<img alt="" class="flag"
+                                        src="images/book.png"></a></li>
+                            <li><a href="quedadas_eng.html" class="page" alt="Meetings">Meetings<img alt="" class="flag"
+                                        src="images/location.png"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="rightnav" role="navigation" aria-labelledby="rightnavheading" aria-label="right">
+                    <div id="rightnavheading">
+                        <ul id="nav-mobile" class="grey darken-4 right hide-on-med-and-down">
+                            <li>
+                                <a href="index_esp.html" class="page"> Cambiar a español<img alt="" class="flag"
+                                        src="images/spain.png"></a>
+                            </li>
+                            <li class="logged-in">
+                                <a href="#" class="modal-trigger page" data-target="modal-account">Profile</a>
+                            </li>
+                            <li class="logged-in">
+                                <a href="#" id="logout1">Logout</a>
+                            </li>
+                            <li class="logged-out">
+                                <a href="#" class=" modal-trigger page" data-target="modal-login">Login<img alt=""
+                                        class="flag" src="images/login.png"></a>
+                            </li>
+                            <li class="logged-out">
+                                <a href="#" class="modal-trigger page" data-target="modal-signup">Signup<img alt=""
+                                        class="flag" src="images/sign.png"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!--SIDENAV-->
+    <div id="menu_responsivo" role="navigation" aria-label="mobile-nav">
+        <ul class="sidenav" id="mobile-links">
+            <li class="active"><a href="index_esp.html">Index</a></li>
+            <li><a href="authors_eng.html">Authors</a></li>
+            <li><a href="libros_eng.html">Books</a></li>
+            <li><a href="quedadas_eng.html">Meetings</a></li>
+            <li><a href="index_esp.html"> Cambiar a español<img alt="Cambiar idioma en versión móvil" class="flag"
+                        src="images/spain.png"></a></li>
+            <li class="logged-in"><a href="#" class="modal-trigger" data-target="modal-account">Profile</a></li>
+            <li class="logged-in"><a href="#" id="logout">Logout</a></li>
+            <li class="logged-out"><a href="#" class=" modal-trigger" data-target="modal-login">Login</a></li>
+            <li class="logged-out"><a href="#" class="modal-trigger" data-target="modal-signup">Signup</a></li>
+        </ul>
+    </div>
+
+
+    <!-- SIGN UP MODAL -->
+    <div id="modal-signup" class="modal" role="complementary" aria-label="Registro">
+        <div class="modal-content">
+            <h1 class="h-font-title center" tabindex="0">Signup</h1><br />
+            <div class="instrucciones">
+                <p class="letra" tabindex="0">All mandatory fields are shown in red and marked with an asterisk.</p>
+            </div>
+            <div id="formulario" role="form">
+                <form id="signup-form">
+                    <div class="input-field">
+
+                        <input type="email" id="signup-email" autocomplete="on" required />
+
+                        <label for="signup-email">Email
+
+                            <abbr class="mandatory-asterisk" title="mandatory"> * </abbr>
+                        </label>
+
+                        <div role="region" aria-live="polite" aria-labelledby="register-mail" tabindex="0">
+                            <p id="register-mail"> In the previous field you must enter your email using the following
+                                format:
+                                example@example.example.</p>
+                        </div>
+
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="signup-password" autocomplete="on" required />
+                        <label for="signup-password">Password
+                            <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                        </label>
+                        <!-- <p></p> -->
+                        <div role="region" aria-live="polite" aria-labelledby="register-pwd" tabindex="0">
+                            <p id="register-pwd"> In the previous field you must enter the password. The password must
+                                meet the following
+                                criteria: </p>
+                        </div>
+                        <ul tabindex="0">
+
+                            <li id="li_1">Contain a letter.</li>
+                            <li id="li_2">Contain an uppercase letter.</li>
+                            <li id="li_3">Contain a number</li>
+                            <li id="li_4">Have a minimum size of 8 characters.</li>
+
+                        </ul>
+                    </div>
+
+                    <button class="btn cyan darken-2 z-depth-0" onclick="registerMail()">Signup</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- LOGIN MODAL -->
+    <div id="modal-login" class="modal" role="complementary" aria-label="Inicio_sesion">
+        <div class="modal-content">
+            <h1 class="h-font-center center">Login</h1><br />
+            <div class="instrucciones">
+                <p class="letra">All mandatory fields are shown in red and marked with an asterisk.</p>
+            </div>
+            <div id="formulario" role="form" aria-labelledby="login-form">
+                <form id="login-form">
+                    <div class="input-field">
+                        <input type="email" id="login-email" required />
+                        <label for="login-email">Email
+                            <abbr class="mandatory-asterisk" title="obligatorio" aria-hidden="true"> * </abbr>
+                        </label>
+                        <p>Enter your email in the previous field.</p>
+                        <div role="region" aria-live="polite" aria-labelledby="loginMail">
+                            <p id="loginMail"></p>
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="login-password" required />
+                        <label for="login-password">Password
+                            <abbr class="mandatory-asterisk" title="mandatory" aria-hidden="true"> * </abbr>
+                        </label>
+                        <p>Enter your password in the previous field.</p>
+                        <div role="region" aria-live="polite" aria-labelledby="loginRdy">
+                            <p id="loginRdy"></p>
+                        </div>
+                    </div>
+
+                    <button class="btn cyan darken-2 z-depth-0" onclick="loginReady()">Login</button>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ACCOUNT MODAL -->
+    <div id="modal-account" class="modal" role="complementary" aria-label="Perfil">
+        <div class="modal-content center-align">
+            <h1 class="h-font center">Personal profile</h1><br />
+            <div class="account-details"></div>
+        </div>
+    </div>
+
+
+
+    <!-----------------------------------CONTENT---------------------------------------->
+
+
+    <div id="content" role="main" aria-label="content" tabindex="0">
+        <div class="container center">
+            <div class="row">
+                <div class="col S12 m4">
+                    <div class="thumbnail" aria-labelledby="image-a"
+                        aria-label="Books and coffee it's a great combination" tabindex="0">
+                        <img class="img_galeria" src="images/book.jpg" alt="">
+                        <div class="caption">
+                            <p class="image_foot">Rank books.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="thumbnail" aria-labelledby="image-b" aria-label="Sala de estudio" tabindex="0">
+                        <img class="img_galeria" src="images/estudio.jpg" alt="">
+                        <div class="caption">
+                            <p class="image_foot">Read with us.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="thumbnail" aria-labelledby="image-c" aria-label="Kids reading books" class="center"
+                        tabindex="0">
+                        <img class="img_galeria" src="images/child.jpg" alt="">
+                        <div class="caption">
+                            <p class="image_foot">Meet people with your tastes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <br>
+        <div class="container" role="complementary" aria-label="section" tabindex="0">
+            <div class="section">
+                <!--   Icon Section   -->
+                <div class="row">
+                    <!--COLUMNA 1-->
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h1 class="center light-blue-text h-space"><i class="material-icons">import_contacts</i>
+                            </h1>
+                            <h2 tabindex="0" class="center h-font h-space">Variety </h2>
+
+                            <p class="light" tabindex="0">
+                                We have a large number of books and other documents available
+                                for reading. Through the different reading meetings that are held monthly, you
+                                can read with us a large number of books. Among them, we highlight novels and poems.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--COLUMNA 2-->
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h1 class="center light-blue-text h-space"><i class="material-icons">create</i></h1>
+                            <h2 tabindex="0" class="center h-font h-space">Writers support</h2>
+
+                            <p class="light" tabindex="0">
+                                We help visualize and get to known amateur writers. You will meet the most popular
+                                writers
+                                at the moment, in addition to information about his different works.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--COLUMNA 3-->
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h1 class="center light-blue-text h-space"><i class="material-icons">create</i></h1>
+                            <h2 tabindex="0" class="center h-font h-space">Comment</h2>
+
+                            <p class="light" tabindex="0">What are you waiting to rate a book you have read? With this,
+                                you will help
+                                other readers to opt for their next reading.
+                                The score is valued with stars, value and find out which book goes first in the ranking.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br><br>
+            <br><br>
+        </div>
+    </div>
+
+
+
+    <!---------------------------------FOOTER------------------------------------------>
+    <div id="footer" role="contentinfo" aria-label="Footer" tabindex="0">
+        <footer class="grey darken-4">
+            <div class="container">
+                <div class="row r-space">
+
+                    <div class="col l6 s12" tabindex="0">
+                        <h1 class="white-text h-font">BookTeam</h1>
+                        <p class="eslogan">Meet & Read</p>
+                        <p class="grey-text text-lighten-4">You can contact us through our social networks.
+                            Likewise, we are
+                            in La Laguna, Tenerife.</p>
+                        <p class="grey-text text-lighten-4">  Telephone contact: 922814774.</p>
+                        <p class="grey-text text-lighten-4"> Email: bookteam@gmail.com </p>
+                    </div>
+
+                    <div class="col l4 offset-l2 s12">
+                        <h1 tabindex="0" class="white-text h-font">Contact Us</h1>
+                        <div class="col ">
+                            <div class="Lista" id="lista_contactos_contenedor">
+                                <ul id="lista_contactos">
+                                    <li id="elemento_instagram"><a  class="grey-text text-lighten-3"
+                                            href="https://www.instagram.com/?hl=en"> <u>Instagram </u>
+                                            <img class="col s2, footer-image" src="images/insta.png" alt="" /></a>
+                                    </li>
+                                    <li id="elemento_facebook"><a  class="grey-text text-lighten-3"
+                                            href="https://www.facebook.com/"><u>Facebook</u> <img
+                                                class="col s2, footer-image" src="images/facebook.png" alt="" /></a>
+
+                                    </li>
+                                    <li id="elemento_twitter"><a  class="grey-text text-lighten-3"
+                                            href="https://twitter.com/">
+                                            <u> Twitter</u> <img class="col s2, footer-image" src="images/twitter.png"
+                                                alt="" /></a>
+                                    </li>
+                                    <li id="elemento_tumblr"><a  class="grey-text text-lighten-3"
+                                            href="https://www.tumblr.com/">
+                                            <u> Tumblr </u> <img class="col s3, footer-image" src="images/tum.png"
+                                                alt="" /></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <div class="test grey darken-3">
+                    <a class="grey-text text-lighten-3"
+                        href="https://firebasestorage.googleapis.com/v0/b/uya3ro.appspot.com/o/Politica%2Fpolitica_esp.pdf?alt=media&token=4c04baa9-10e5-4b91-85fd-c8b5fef87510">
+                        
+                        <u id="politica"> 2019 BookTeam. All Rights Reserved. </u>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- <div id="footer" role="contentinfo" aria-label="Footer" tabindex="0">
+        <footer class="grey darken-4">
+            <div class="container">
+                <div class="row r-space">
+
+                    <div class="col l6 s12" tabindex="0">
+                        <h1 class="white-text h-font">BookTeam</h1>
+                        <p class="eslogan">Meet & Read</p>
+                        <p class="grey-text text-lighten-4">You can contact us through our social networks.
+                            Likewise, we are
+                            in La Laguna, Tenerife.</p>
+                        <p class="grey-text text-lighten-4"> <b> Telephone contact: 922814774. </b></p>
+                        <p class="grey-text text-lighten-4"> <b> Email: bookteam@gmail.com </b></p>
+                    </div>
+
+                    <div class="col l4 offset-l2 s12">
+                        <h1 tabindex="0" class="white-text h-font">Contact Us</h1>
+                        <div class="col ">
+                            <div class="Lista" id="lista_contactos_contenedor">
+                                <ul id="lista_contactos">
+                                    <li id="elemento_instagram"><a tabindex="0" class="grey-text text-lighten-3"
+                                            href="https://www.instagram.com/?hl=en"> <u>Instagram </u>
+                                            <img class="col s2, footer-image" src="images/insta.png" alt="" /></a>
+                                    </li>
+                                    <li id="elemento_facebook"><a tabindex="0" class="grey-text text-lighten-3"
+                                            href="https://www.facebook.com/"><u>Facebook</u> <img
+                                                class="col s2, footer-image" src="images/facebook.png" alt="" /></a>
+
+                                    </li>
+                                    <li id="elemento_twitter"><a tabindex="0" class="grey-text text-lighten-3"
+                                            href="https://twitter.com/">
+                                            <u> Twitter</u> <img class="col s2, footer-image" src="images/twitter.png"
+                                                alt="" /></a>
+                                    </li>
+                                    <li id="elemento_tumblr"><a tabindex="0" class="grey-text text-lighten-3"
+                                            href="https://www.tumblr.com/">
+                                            <u> Tumblr </u> <img class="col s3, footer-image" src="images/tum.png"
+                                                alt="" /></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    <div class="footer-copyright">
+                        <div class="grey darken-3" tabindex="0">
+                            <p class="white-text">2019 BookTeam. All Rights Reserved.</p>
+                        </div>
+                    </div>
+        </footer>
+    </div> -->
+
+    <!----------------------------------SCRIPTS----------------------------------------->
+    <!--JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!--Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-functions.js"></script>
+
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDLJUI3VYgL53qdHOXEzlNlPi1uR2K0TcY",
+            authDomain: "uya3ro.firebaseapp.com",
+            databaseURL: "https://uya3ro.firebaseio.com",
+            projectId: "uya3ro",
+            storageBucket: "uya3ro.appspot.com",
+            messagingSenderId: "905524222112"
+        };
+        firebase.initializeApp(config);
+
+        // make auth and firestore references
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        const functions = firebase.functions();
+
+        // update firestore settings
+        db.settings({ timestampsInSnapshots: true });
+    </script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/auth_eng.js"></script>
+    <script src="scripts/index_eng.js"></script>
+    <script src="scripts/validate_eng.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+            $('.slider').slider({ full_width: true });
+        });
+
+
+    </script>
+</body>
+
+</html>

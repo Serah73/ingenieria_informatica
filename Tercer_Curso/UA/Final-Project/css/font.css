@@ -1,0 +1,37 @@
+/********ETIQUETAS*********/
+
+footer .h-font {
+	padding: 0px;
+  	margin-top: 20px;
+  	margin-bottom: 10px;
+}
+
+/********CLASES*********/
+
+.r-space {
+	margin-top: 100px;
+}
+
+.h-font-title {
+	font-size: 32px;
+}
+
+.h-font {
+	font-size: 24px;
+}
+
+.h-space {
+	margin-top: 10px;
+}
+
+.title-space {
+	margin: 20px;
+	margin-top: 30px;
+}
+
+.eslogan{
+	color: white;
+	font-size: 1.2em;
+	margin-top: -10px;
+}
+

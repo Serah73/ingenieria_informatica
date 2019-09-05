@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import style-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="css/bookteam.css">
+    <link type="text/css" rel="stylesheet" href="css/font.css">
+    <link type="text/css" rel="stylesheet" href="css/quedadas.css">
+        <title>BookTeam - Meetings</title>
+
+</head>
+
+<!---------------------------------NAVBAR------------------------------------------>
+
+<!--Navbar con Left Aligned Links-->
+
+<body>
+
+    <div class="navbar-fixed" role="navigation" aria-label="Navigation bar">
+        <nav class="grey darken-4">
+            <div class="nav-wrapper">
+                <a class="brand logo left" href="index_eng.html">
+                    <img class="col s1" id="bookicon" src="images/icon.png" alt="logo BookTeam"><em
+                        id="titulo">BookTeam</em>
+                </a>
+                <a href="#" class="sidenav-trigger left" data-target="mobile-links">
+                    <i class="material-icons">menu</i>
+                </a>
+
+                <div id="leftnav" role="navigation" aria-labelledby="leftnavheading" aria-label="izquierda">
+                    <div id="leftnavheading">
+                        <ul class="left hide-on-med-and-down">
+                            <li><a href="authors_eng.html" class="page" alt="Authors">Authors<img alt="" class="flag"
+                                        src="images/author.png"></a></li>
+                            <li><a href="libros_eng.html" class="page" alt="Books">Books<img alt="" class="flag"
+                                        src="images/book.png"></a></li>
+                            <li><a href="quedadas_eng.html" class="page" alt="Meetings">Meetings<img alt="" class="flag"
+                                        src="images/location.png"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="rightnav" role="navigation" aria-labelledby="rightnavheading" aria-label="right">
+                    <div id="rightnavheading">
+                        <ul id="nav-mobile" class="grey darken-4 right hide-on-med-and-down">
+                            <li>
+                                <a href="quedadas_esp.html" class="page"> Cambiar a español<img alt="" class="flag"
+                                        src="images/spain.png"></a>
+                            </li>
+                            <li class="logged-in">
+                                <a href="#" class="modal-trigger page" data-target="modal-account">Profile</a>
+                            </li>
+                            <li class="logged-in">
+                                <a href="#" id="logout1">Logout</a>
+                            </li>
+                            <li class="logged-out">
+                                <a href="#" class=" modal-trigger page" data-target="modal-login">Login<img alt=""
+                                        class="flag" src="images/login.png"></a>
+                            </li>
+                            <li class="logged-out">
+                                <a href="#" class="modal-trigger page" data-target="modal-signup">Signup<img alt=""
+                                        class="flag" src="images/sign.png"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!--SIDENAV-->
+    <div id="menu_responsivo" role="navigation" aria-label="mobile-nav">
+        <ul class="sidenav" id="mobile-links">
+            <li class="active"><a href="index_esp.html">Index</a></li>
+            <li><a href="authors_eng.html">Authors</a></li>
+            <li><a href="libros_eng.html">Books</a></li>
+            <li><a href="quedadas_eng.html">Meetings</a></li>
+            <li><a href="quedadas_esp.html"> Cambiar a español<img alt="Cambiar idioma en versión móvil" class="flag"
+                        src="images/spain.png"></a></li>
+            <li class="logged-in"><a href="#" class="modal-trigger" data-target="modal-account">Profile</a></li>
+            <li class="logged-in"><a href="#" id="logout">Logout</a></li>
+            <li class="logged-out"><a href="#" class=" modal-trigger" data-target="modal-login">Login</a></li>
+            <li class="logged-out"><a href="#" class="modal-trigger" data-target="modal-signup">Signup</a></li>
+        </ul>
+    </div>
+
+
+    <!-- SIGN UP MODAL -->
+    <div id="modal-signup" class="modal" role="complementary" aria-label="Registro">
+        <div class="modal-content">
+            <h1 class="h-font-title center" tabindex="0">Signup</h1><br />
+            <div class="instrucciones">
+                <p class="letra" tabindex="0">All mandatory fields are shown in red and marked with an asterisk.</p>
+            </div>
+            <div id="formulario" role="form">
+                <form id="signup-form">
+                    <div class="input-field">
+
+                        <input type="email" id="signup-email" autocomplete="on" required />
+
+                        <label for="signup-email">Email
+
+                            <abbr class="mandatory-asterisk" title="mandatory"> * </abbr>
+                        </label>
+
+                        <div role="region" aria-live="polite" aria-labelledby="register-mail" tabindex="0">
+                            <p id="register-mail"> In the previous field you must enter your email using the following
+                                format:
+                                example@example.example.</p>
+                        </div>
+
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="signup-password" autocomplete="on" required />
+                        <label for="signup-password">Password
+                            <abbr class="mandatory-asterisk" title="obligatorio"> * </abbr>
+                        </label>
+                        <!-- <p></p> -->
+                        <div role="region" aria-live="polite" aria-labelledby="register-pwd" tabindex="0">
+                            <p id="register-pwd"> In the previous field you must enter the password. The password must
+                                meet the following
+                                criteria: </p>
+                        </div>
+                        <ul tabindex="0">
+
+                            <li id="li_1">Contain a letter.</li>
+                            <li id="li_2">Contain an uppercase letter.</li>
+                            <li id="li_3">Contain a number</li>
+                            <li id="li_4">Have a minimum size of 8 characters.</li>
+
+                        </ul>
+                    </div>
+
+                    <button class="btn cyan darken-2 z-depth-0" onclick="registerMail()">Signup</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- LOGIN MODAL -->
+    <div id="modal-login" class="modal" role="complementary" aria-label="Inicio_sesion">
+        <div class="modal-content">
+            <h1 class="h-font-center center">Login</h1><br />
+            <div class="instrucciones">
+                <p class="letra">All mandatory fields are shown in red and marked with an asterisk.</p>
+            </div>
+            <div id="formulario" role="form" aria-labelledby="login-form">
+                <form id="login-form">
+                    <div class="input-field">
+                        <input type="email" id="login-email" required />
+                        <label for="login-email">Email
+                            <abbr class="mandatory-asterisk" title="obligatorio" aria-hidden="true"> * </abbr>
+                        </label>
+                        <p>Enter your email in the previous field.</p>
+                        <div role="region" aria-live="polite" aria-labelledby="loginMail">
+                            <p id="loginMail"></p>
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="login-password" required />
+                        <label for="login-password">Password
+                            <abbr class="mandatory-asterisk" title="mandatory" aria-hidden="true"> * </abbr>
+                        </label>
+                        <p>Enter your password in the previous field.</p>
+                        <div role="region" aria-live="polite" aria-labelledby="loginRdy">
+                            <p id="loginRdy"></p>
+                        </div>
+                    </div>
+
+                    <button class="btn cyan darken-2 z-depth-0" onclick="loginReady()">Login</button>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ACCOUNT MODAL -->
+    <div id="modal-account" class="modal" role="complementary" aria-label="Perfil">
+        <div class="modal-content center-align">
+            <h1 class="h-font center">Personal profile</h1><br />
+            <div class="account-details"></div>
+        </div>
+    </div>
+
+
+
+
+    <!-----------------------------------CONTENT---------------------------------------->
+
+
+
+    <div id="content" role="main" aria-label="content">
+        <div id="container" role="complementary" aria-labelledby="meetings">
+            <h1 tabindex="0" id="quedadas" class="center">Meetings</h1>
+            <div id="tabla" role="complementary" aria-labelledby="table_quedadas">
+
+                <table tabindex="0" id="table_quedadas" #table_quedadas required>
+                    <caption>Next meetings:</caption>
+                    <th>
+                        <tr>
+                            <td> <b> Date</b> </td>
+                            <td class="mov_hide"> <b> User </b> </td>
+                            <td> <b> Book </b> </td>
+                            <td> <b> Location </b> </td>
+                            <td> <b> Hour </b> </td>
+                        </tr>
+                    </th>
+                    <tbody id="table_body2">
+
+
+                    </tbody>
+                </table>
+            </div>
+            <div id="obligatorio" tabindex="0">
+                <br>
+                <p class="letra">All mandatory fields are shown in red and marked with an asterisk.</p>
+                <br>
+            </div>
+
+            <div id="formulario3" role="form">
+                <form class="input_append">
+
+                    <div class="campos_form">
+                        <div tabindex="0" class="requerido">
+                            <b>User email:</b>
+                            <abbr class="mandatory-asterisk" title="mandatory"> * </abbr>
+                            <br>
+                        </div>
+
+                        <label for="correo">Email</label>
+                        <input tabindex="0" type="text" id="correo" name="User email" aria-describedby="campo_correo"
+                            placeholder="Introduce your user email." autocomplete="on" required />
+                        <p tabindex="0" id="campo_correo"> In the previous field you must enter your user email</p>
+                        <div role="region" aria-live="polite" aria-labelledby="assembly-mail">
+                            <p id="assembly-mail" tabindex="0"> The email must have the following format: mail@mail.com.
+                                The email must match the email in the current account. </p>
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+
+                    <div tabindex="0" class="requerido">
+                        <b>Meeting date:</b>
+                        <abbr class="mandatory-asterisk" title="mandatory"> * </abbr>
+                        <br>
+                    </div>
+
+
+                    <label for="fecha_quedada">Meetings date</label>
+                    <input tabindex="0" type="date" id="fecha_quedada" name="Meetings date"
+                        aria-describedby="campo_quedada" autocomplete="on" required />
+                    <p tabindex="0" id="campo_quedada"> In the previous field you must enter the meetings date, it must
+                        be greater than the current date.</p>
+                    <div role="region" aria-live="polite" aria-labelledby="assembly-date">
+                        <p id="assembly-date" tabindex="0"> Example: 15/09/2019 </p>
+                    </div>
+
+                    <br>
+                    <br>
+
+                    <div tabindex="0" class="requerido">
+                        <b>Hour:</b>
+                        <abbr class="mandatory-asterisk" title="mandatory"> * </abbr>
+                        <br>
+                    </div>
+
+                    <label for="hora">Hour</label>
+                    <input tabindex="0" type="time" id="hora" name="hour" aria-describedby="campo_hora" value="08:00:00"
+                        autocomplete="on" required />
+                    <p tabindex="0" id="campo_hora"> In the previous field you must enter the hour of the meating.</p>
+                    <div role="region" aria-live="polite" aria-labelledby="assembly-hour">
+                        <p id="assembly-hour" tabindex="0"> Example: 10:00 </p>
+                    </div>
+                    <br>
+                    <br>
+
+                    <div tabindex="0" class="requerido">
+                        <b>Location:</b>
+                        <abbr class="mandatory-asterisk" title="mandatory"> * </abbr>
+                        <br>
+                    </div>
+
+                    <label for="lugar">Location</label>
+                    <input tabindex="0" type="text" id="lugar" name="Location" aria-describedby="campo_lugar"
+                        autocomplete="on" placeholder="Introduce the location" required />
+                    <p tabindex="0" id="campo_lugar"> In the previous field you must enter the location of the meeting.
+                    </p>
+                    <div role="region" aria-live="polite" aria-labelledby="assembly-place">
+                        <p id="assembly-place" tabindex="0"> Example: ULL's Anchieta library </p>
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div tabindex="0" class="requerido">
+                        <b>City:</b>
+                        <abbr class="mandatory-asterisk" title="mandatory"> * </abbr>
+                        <br>
+                    </div>
+
+                    <label for="ciudad">City</label>
+                    <input tabindex="0" type="text" id="ciudad" name="city" aria-describedby="campo_ciudad"
+                        placeholder="Introduce the city." required />
+                    <p tabindex="0" id="campo_ciudad"> In the previous field you must enter the city of the meeting.</p>
+                    <div role="region" aria-live="polite" aria-labelledby="assembly-city">
+                        <p id="assembly-city" tabindex="0"> Example: Arrecife </p>
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div tabindex="0" class="requerido">
+                        <b>Street:</b>
+                        <abbr class="mandatory-asterisk" title="mandatory"> * </abbr>
+                        <br>
+                    </div>
+                    <label for="calle">Street</label>
+                    <input tabindex="0" onchange="console.log(document.getElementById('calle').value)" type="text"
+                        id="calle" name="street" aria-describedby="campo_calle" placeholder="Introduce the street."
+                        autocomplete="on" required />
+                    <p tabindex="0" id="campo_calle"> In the previous field you must enter the city of the meeting.</p>
+                    <div role="region" aria-live="polite" aria-labelledby="assembly-street">
+                        <p id="assembly-street" tabindex="0"> Example: La Inés </p>
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div tabindex="0" class="mandatory">
+                        <b>Building:</b>
+                        <abbr class="mandatory-asterisk" title="mandatory"> * </abbr>
+                        <br>
+                    </div>
+                    <label for="edificio">Building</label>
+                    <input tabindex="0" type="text" id="edificio" name="building" aria-describedby="campo_edificio"
+                        placeholder="Introduce the building." autocomplete="on" required />
+                    <p tabindex="0" id="campo_edificio"> In the previous field you must enter the building of the
+                        meeting.
+                    </p>
+                    <div role="region" aria-live="polite" aria-labelledby="assembly-building">
+                        <p id="assembly-building" tabindex="0">Example: El Palmar</p>
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div tabindex="0" class="requerido">
+                        <b>Door:</b>
+                        <abbr class="mandatory-asterisk" title="mandatory"> * </abbr>
+                        <br>
+                    </div>
+                    <label for="puerta">Door</label>
+                    <input tabindex="0" type="text" id="puerta" name="door" aria-describedby="campo_puerta"
+                        placeholder="Introduce the door number" autocomplete="on" required />
+                    <p tabindex="0" id="campo_puerta"> In the previous field you must enter the door number</p>
+                    <div role="region" aria-live="polite" aria-labelledby="assembly-door">
+                        <p id="assembly-door" tabindex="0">Example: 4º A</p>
+                    </div>
+
+                    <br>
+                    <br>
+                    <div tabindex="0" class="requerido">
+                        <b>Book:</b>
+                        <abbr class="mandatory-asterisk" title="mandatory"> * </abbr>
+                        <br>
+                    </div>
+                    <label for="field1">Book</label>
+                    <input tabindex="0" autocomplete="on" class="input" id="field1" name="prof1"
+                        aria-describedby="campo_libro" type="text" placeholder="Introduce the book's name" required />
+
+                    <p tabindex="0" id="campo_libro"> In the previous field you must enter the name of the book.</p>
+                    <div role="region" aria-live="polite" aria-labelledby="assembly-book">
+                        <p id="assembly-book" tabindex="0"> Example: Harry Potter and the Philosopher's Stone. </p>
+                    </div>
+
+                </form>
+            </div>
+
+            <br>
+
+            <div  class="modal-footer" role="region" aria-label="buttons">
+                <div role="region" aria-labelledby="comprobar">
+                    <button id="comprobar" type="submit" class="form-control btn btn-primary" name="check"
+                        onclick=" CheckCampo();" role="button">Check</button>
+                </div>
+                <div>
+                    <p id ="incorrecto" tabindex="0"> Yoy must be loged in to create a meeting</p>
+                </div>
+                <div class="separacion_boton" role="region" aria-labelledby="send">
+                    <button id="send" type="submit" class="form-control btn btn-primary" name="send"
+                        (click)="animacion()" onclick="pushData();">Signup meeting</button>
+                </div>
+            </div>
+
+            <p tabindex="0" id="operacion" role="alert" aria-label="Meeting added">Meeting added correctly.</p>
+
+        </div>
+    </div>
+
+
+
+
+    <!---------------------------------FOOTER------------------------------------------>
+
+
+    <div id="footer" role="contentinfo" aria-label="Footer" tabindex="0">
+        <footer class="grey darken-4">
+            <div class="container">
+                <div class="row r-space">
+
+                    <div class="col l6 s12" tabindex="0">
+                        <h1 class="white-text h-font">BookTeam</h1>
+                        <p class="eslogan">Meet & Read</p>
+                        <p class="grey-text text-lighten-4">You can contact us through our social networks.
+                            Likewise, we are
+                            in La Laguna, Tenerife.</p>
+                        <p class="grey-text text-lighten-4"> Telephone contact: 922814774.</p>
+                        <p class="grey-text text-lighten-4"> Email: bookteam@gmail.com </p>
+                    </div>
+
+                    <div class="col l4 offset-l2 s12">
+                        <h1 tabindex="0" class="white-text h-font">Contact Us</h1>
+                        <div class="col ">
+                            <div class="Lista" id="lista_contactos_contenedor">
+                                <ul id="lista_contactos">
+                                    <li id="elemento_instagram"><a  class="grey-text text-lighten-3"
+                                            href="https://www.instagram.com/?hl=en"> <u>Instagram </u>
+                                            <img class="col s2, footer-image" src="images/insta.png" alt="" /></a>
+                                    </li>
+                                    <li id="elemento_facebook"><a class="grey-text text-lighten-3"
+                                            href="https://www.facebook.com/"><u>Facebook</u> <img
+                                                class="col s2, footer-image" src="images/facebook.png" alt="" /></a>
+
+                                    </li>
+                                    <li id="elemento_twitter"><a  class="grey-text text-lighten-3"
+                                            href="https://twitter.com/">
+                                            <u> Twitter</u> <img class="col s2, footer-image" src="images/twitter.png"
+                                                alt="" /></a>
+                                    </li>
+                                    <li id="elemento_tumblr"><a  class="grey-text text-lighten-3"
+                                            href="https://www.tumblr.com/">
+                                            <u> Tumblr </u> <img class="col s3, footer-image" src="images/tum.png"
+                                                alt="" /></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <div class="test grey darken-3">
+                    <a class="grey-text text-lighten-3"
+                        href="https://firebasestorage.googleapis.com/v0/b/uya3ro.appspot.com/o/Politica%2Fpolitica_esp.pdf?alt=media&token=4c04baa9-10e5-4b91-85fd-c8b5fef87510">
+
+                        <u id="politica"> 2019 BookTeam. All Rights Reserved. </u>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!----------------------------------SCRIPTS----------------------------------------->
+
+
+    <!--JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-functions.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDLJUI3VYgL53qdHOXEzlNlPi1uR2K0TcY",
+            authDomain: "uya3ro.firebaseapp.com",
+            databaseURL: "https://uya3ro.firebaseio.com",
+            projectId: "uya3ro",
+            storageBucket: "uya3ro.appspot.com",
+            messagingSenderId: "905524222112"
+        };
+        firebase.initializeApp(config);
+
+        // make auth and firestore references
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        const functions = firebase.functions();
+
+        // update firestore settings
+        db.settings({ timestampsInSnapshots: true });
+    </script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/auth_eng.js"></script>
+    <script src="scripts/index_eng.js"></script>
+    <script src="scripts/libros_eng.js"></script>
+    <script src="scripts/quedada_eng.js"></script>
+    <script src="scripts/validate_eng.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
+
+</body>
+
+</html>

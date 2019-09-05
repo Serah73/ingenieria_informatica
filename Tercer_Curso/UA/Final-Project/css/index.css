@@ -1,0 +1,14 @@
+/********MEDIA*********/
+
+@media only screen 
+and (max-width : 2200px) {
+   footer {
+       bottom: 0;
+       width: 100%;
+       margin: auto;
+       flex-wrap: wrap;
+       position: relative;
+       
+   }
+}
+
